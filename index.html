@@ -4,21 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Hazel Projects Ayapakkam | AI, School, Mechanical & Engineering Projects</title>
+<title>Hazel Projects Ayapakkam | School, Arduino, ESP32 & Final Year Projects Chennai</title>
 
-<meta name="description" content="Hazel Projects Ayapakkam Chennai – AI, Arduino, IoT, Robotics, School Science Projects, Mechanical Projects & Final Year Engineering Projects.">
-<meta name="keywords" content="school projects Chennai, mechanical engineering projects, AI projects, Arduino projects, IoT projects, Hazel Projects Ayapakkam">
+<meta name="description" content="Hazel Projects Ayapakkam Chennai – School projects from ₹999, Arduino & ESP32 projects ₹1555, Mini projects ₹2999, Final year engineering projects ₹9999. Low cost student projects in Tamil Nadu.">
+<meta name="keywords" content="school projects Chennai, school projects Tamil Nadu, Arduino projects Chennai, ESP32 projects India, mini projects Chennai, final year projects Tamil Nadu, low cost engineering projects, Hazel Projects Ayapakkam">
 <meta name="author" content="Hazel Projects">
 <meta name="robots" content="index, follow">
 
 <meta name="google-site-verification" content="BiOVrOmzMKOg3ooaC-ggbZ_QiA_QXSpCn-16-h9XQ1Y">
 
-<!-- LocalBusiness Schema -->
+<!-- Local Business + India SEO -->
 <script type="application/ld+json">
 {
  "@context":"https://schema.org",
  "@type":"LocalBusiness",
  "name":"Hazel Projects",
+ "description":"Low cost school, Arduino, ESP32, mini and final year engineering projects in Chennai and Tamil Nadu.",
  "url":"https://arunoff01-rgb.github.io/hazelprojects/",
  "telephone":"+919791871615",
  "address":{
@@ -26,27 +27,25 @@
    "streetAddress":"Ayapakkam",
    "addressLocality":"Chennai",
    "addressRegion":"Tamil Nadu",
-   "postalCode":"600077",
    "addressCountry":"IN"
  },
+ "areaServed":["Chennai","Tamil Nadu","India"],
  "openingHours":"Mo-Su 09:00-21:00",
- "priceRange":"₹499 - ₹8000+",
+ "priceRange":"₹999 - ₹9999+",
  "sameAs":["https://wa.me/919791871615"]
 }
 </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
  --blue:#0b5cff;
- --pink:#ff4ecd;
  --green:#00c897;
  --orange:#ff8a00;
  --purple:#7a5cff;
  --bg:#f4f8ff;
  --card:#ffffff;
- --text:#0a0a0a;
  --muted:#555;
 }
 *{box-sizing:border-box}
@@ -54,80 +53,68 @@ body{
  margin:0;
  font-family:Inter,system-ui;
  background:var(--bg);
- color:var(--text);
+ color:#000;
 }
 header{
  text-align:center;
- padding:50px 16px;
+ padding:52px 16px;
  background:linear-gradient(135deg,#ffffff,#e9f1ff);
  animation:fadeDown 1s ease;
 }
 header h1{
  font-family:Orbitron;
- font-size:36px;
  color:var(--blue);
+ font-size:36px;
  margin:0;
 }
 header p{color:var(--muted)}
 
 .wrap{max-width:1200px;margin:auto;padding:26px}
 
+.section-title{
+ font-family:Orbitron;
+ color:var(--blue);
+ margin-top:50px;
+}
+
 .services{
  display:grid;
  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
- gap:20px;
- margin-top:30px;
+ gap:22px;
 }
 
 .service{
- background:linear-gradient(135deg,var(--card),#f9fbff);
+ background:var(--card);
  padding:22px;
  border-radius:18px;
- box-shadow:0 15px 40px rgba(0,0,0,.08);
+ box-shadow:0 14px 40px rgba(0,0,0,.08);
  transition:.4s;
- animation:fadeUp .8s ease;
+ animation:fadeUp .9s ease;
 }
 .service:hover{transform:translateY(-10px)}
 
-.service h3{
- font-family:Orbitron;
- margin-top:0;
+.price{
+ font-size:22px;
+ font-weight:800;
+ margin-top:10px;
 }
 
-.ai{border-top:6px solid var(--blue)}
 .school{border-top:6px solid var(--green)}
-.mech{border-top:6px solid var(--orange)}
-.iot{border-top:6px solid var(--purple)}
-.print{border-top:6px solid var(--pink)}
-
-.gallery{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
- gap:18px;
- margin-top:30px;
-}
-
-.gallery img{
- width:100%;
- height:200px;
- object-fit:cover;
- border-radius:16px;
- transition:.4s;
-}
-.gallery img:hover{transform:scale(1.05)}
+.arduino{border-top:6px solid var(--blue)}
+.mini{border-top:6px solid var(--orange)}
+.final{border-top:6px solid var(--purple)}
 
 .btn{
  display:inline-block;
  background:linear-gradient(90deg,var(--blue),var(--purple));
  color:#fff;
- padding:14px 22px;
+ padding:14px 24px;
  border-radius:14px;
  text-decoration:none;
  font-weight:700;
+ margin-top:12px;
  box-shadow:0 14px 35px rgba(11,92,255,.35);
- transition:.3s;
 }
-.btn:hover{transform:translateY(-6px)}
 
 input,select{
  width:100%;
@@ -159,7 +146,7 @@ function sendLead(){
  let n=document.getElementById("name").value;
  let p=document.getElementById("phone").value;
  let t=document.getElementById("type").value;
- let msg=`Hi Hazel Projects,%0AName: ${n}%0APhone: ${p}%0AProject Type: ${t}`;
+ let msg=`Hi Hazel Projects,%0AName: ${n}%0APhone: ${p}%0AInterested In: ${t}`;
  window.open("https://wa.me/919791871615?text="+msg,"_blank");
 }
 </script>
@@ -169,100 +156,87 @@ function sendLead(){
 
 <header>
 <h1>Hazel Projects — Ayapakkam</h1>
-<p>AI • School • Mechanical • Robotics • Engineering Projects</p>
+<p>School • Arduino • ESP32 • Mini • Final Year Engineering Projects</p>
 </header>
 
 <main class="wrap">
 
-<h2 style="font-family:Orbitron;color:var(--blue)">Our Services</h2>
+<h2 class="section-title">Our Project Services & Pricing</h2>
 
 <section class="services">
-
-<div class="service ai">
-<h3>🤖 AI & ML Projects</h3>
-<ul>
-<li>Face recognition</li>
-<li>AI accident detection</li>
-<li>Voice controlled systems</li>
-<li>Chatbots & ML apps</li>
-</ul>
-</div>
 
 <div class="service school">
 <h3>🏫 School Projects</h3>
 <ul>
 <li>Science working models</li>
-<li>CBSE & State board</li>
-<li>Low-cost demo projects</li>
-<li>Explanation included</li>
+<li>CBSE & State board syllabus</li>
+<li>Explanation + demo</li>
 </ul>
+<div class="price">Starts from ₹999</div>
 </div>
 
-<div class="service mech">
-<h3>⚙️ Mechanical Projects</h3>
+<div class="service arduino">
+<h3>🔌 Arduino / ESP32 Projects</h3>
 <ul>
-<li>Fabrication models</li>
-<li>Mechanism-based builds</li>
-<li>Mini & major projects</li>
-<li>Design + demo</li>
+<li>Basic to intermediate level</li>
+<li>IoT & automation projects</li>
+<li>Code + wiring support</li>
 </ul>
+<div class="price">₹1555</div>
 </div>
 
-<div class="service iot">
-<h3>📡 Arduino / IoT</h3>
+<div class="service mini">
+<h3>⚙️ Mini Engineering Projects</h3>
 <ul>
-<li>Smart automation</li>
-<li>ESP32 / Arduino</li>
-<li>IoT dashboards</li>
-<li>Sensor integration</li>
+<li>Diploma & BE mini projects</li>
+<li>Hardware + demo</li>
+<li>Affordable builds</li>
 </ul>
+<div class="price">₹2999</div>
 </div>
 
-<div class="service print">
-<h3>🖨️ 3D Printing</h3>
+<div class="service final">
+<h3>🎓 Final Year Projects</h3>
 <ul>
-<li>PLA / ABS printing</li>
-<li>Prototype models</li>
-<li>Mechanical parts</li>
-<li>Low cost per gram</li>
+<li>Major engineering projects</li>
+<li>Report, code & explanation</li>
+<li>Support till submission</li>
 </ul>
+<div class="price">₹9999</div>
 </div>
 
 </section>
 
-<h2 style="font-family:Orbitron;color:var(--blue);margin-top:50px">Get Instant Quote</h2>
+<h2 class="section-title">Why Students Choose Hazel Projects</h2>
+<div class="service">
+<ul>
+<li>✔ Lowest price in Chennai & Tamil Nadu</li>
+<li>✔ Fast WhatsApp response</li>
+<li>✔ Student-friendly explanation</li>
+<li>✔ Startup support mindset</li>
+<li>✔ Trusted by school & college students</li>
+</ul>
+</div>
 
-<section class="service">
+<h2 class="section-title">Get Instant Quote</h2>
+<div class="service">
 <form onsubmit="sendLead();return false;">
 <input id="name" placeholder="Your Name" required>
 <input id="phone" placeholder="Mobile Number" required>
 <select id="type">
-<option>AI / ML Project</option>
-<option>School Project</option>
-<option>Mechanical Project</option>
-<option>Arduino / IoT Project</option>
-<option>Final Year Engineering Project</option>
-<option>3D Printing</option>
+<option>School Project (₹999)</option>
+<option>Arduino / ESP32 Project (₹1555)</option>
+<option>Mini Project (₹2999)</option>
+<option>Final Year Project (₹9999)</option>
 </select>
 <button class="btn" type="submit">Submit & WhatsApp</button>
 </form>
-</section>
-
-<section class="service">
-<h3>📍 Contact</h3>
-<p>
-Ayapakkam, Chennai<br>
-📞 +91 97918 71615<br>
-<a href="https://www.google.com/maps/search/?api=1&query=Hazel+Projects+Ayapakkam+Chennai" target="_blank">
-Get Directions on Google Maps
-</a>
-</p>
-</section>
+</div>
 
 </main>
 
-<footer style="text-align:center;padding:22px;color:var(--muted)">
-© Hazel Projects • Smart Innovation Hub
+<footer style="text-align:center;padding:24px;color:var(--muted)">
+© Hazel Projects • Low Cost Student Projects • Chennai • Tamil Nadu • India
 </footer>
 
 <div class="float">
