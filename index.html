@@ -4,124 +4,75 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Hazel Projects | Project Centre Near Me | India</title>
+<title>Hazel Projects | Project Centre Near Me | School, College & Engineering Projects</title>
 
-<meta name="description" content="Hazel Projects – project centre near me providing school projects, Arduino & ESP32 projects, mini and final year engineering projects across India.">
-
-<meta name="keywords" content="
-project centre near me,
-engineering project centre near me,
-school project centre near me,
-Arduino project centre near me,
-ESP32 project centre near me,
-mini project centre near me,
-final year project centre near me,
-project centre Chennai,
-project centre Bangalore,
-project centre Hyderabad,
-project centre Coimbatore,
-project centre Madurai,
-project centre Trichy,
-project centre Salem,
-project centre Erode,
-project centre Tirunelveli,
-project centre Vellore,
-project centre Delhi,
-project centre Mumbai,
-project centre Pune,
-project centre Kolkata,
-project centre Ahmedabad,
-project centre Jaipur,
-project centre Kochi,
-project centre Trivandrum,
-project centre Kerala,
-project centre Tamil Nadu,
-project centre Karnataka,
-project centre Andhra Pradesh,
-project centre Telangana,
-project centre Maharashtra,
-project centre Gujarat,
-project centre Rajasthan,
-project centre West Bengal,
-project centre India,
-Hazel Projects Ayapakkam
-">
-
-<meta name="author" content="Hazel Projects">
+<meta name="description" content="Hazel Projects – project centre near me providing school projects, Arduino UNO, ESP32, IoT, AI, mechanical, ECE and final year engineering projects.">
 <meta name="robots" content="index, follow">
 
-<meta name="google-site-verification" content="BiOVrOmzMKOg3ooaC-ggbZ_QiA_QXSpCn-16-h9XQ1Y">
-
-<!-- LOCAL BUSINESS SCHEMA (CITIES/STATES FOR SEARCH ENGINE ONLY) -->
-<script type="application/ld+json">
-{
- "@context":"https://schema.org",
- "@type":"LocalBusiness",
- "name":"Hazel Projects",
- "description":"Project centre providing school, Arduino, ESP32, mini and final year engineering projects across India.",
- "url":"https://arunoff01-rgb.github.io/hazelprojects/",
- "telephone":"+919791871615",
- "address":{
-   "@type":"PostalAddress",
-   "streetAddress":"Ayapakkam",
-   "addressLocality":"Chennai",
-   "addressRegion":"Tamil Nadu",
-   "addressCountry":"IN"
- },
- "areaServed":[
-   "India",
-   "Tamil Nadu","Karnataka","Kerala","Andhra Pradesh","Telangana",
-   "Maharashtra","Gujarat","Rajasthan","West Bengal","Delhi"
- ],
- "openingHours":"Mo-Su 09:00-21:00",
- "priceRange":"₹999 - ₹9999+",
- "sameAs":["https://wa.me/919791871615"]
-}
-</script>
-
 <style>
-/* ---------- ROBOTIC BACKGROUND ---------- */
+/* -------- ROBOTIC BACKGROUND -------- */
 body{
   margin:0;
   font-family:Arial, sans-serif;
   background:#050b1e;
   color:#fff;
-  overflow-x:hidden;
 }
 #robot-bg{
   position:fixed;
   inset:0;
   z-index:-1;
   background:
-    radial-gradient(circle at 20% 20%, rgba(0,255,255,0.15), transparent 40%),
-    radial-gradient(circle at 80% 60%, rgba(0,120,255,0.15), transparent 40%),
-    repeating-linear-gradient(0deg, rgba(0,255,255,0.05) 0 1px, transparent 1px 60px),
-    repeating-linear-gradient(90deg, rgba(0,255,255,0.05) 0 1px, transparent 1px 60px);
-  animation:gridMove 20s linear infinite;
+    radial-gradient(circle at 20% 20%, rgba(0,255,255,.15), transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(0,120,255,.15), transparent 40%),
+    repeating-linear-gradient(0deg, rgba(0,255,255,.05) 0 1px, transparent 1px 60px),
+    repeating-linear-gradient(90deg, rgba(0,255,255,.05) 0 1px, transparent 1px 60px);
+  animation:moveGrid 20s linear infinite;
 }
-@keyframes gridMove{
-  from{background-position:0 0,0 0,0 0,0 0;}
+@keyframes moveGrid{
   to{background-position:0 0,0 0,0 600px,600px 0;}
 }
 
-/* ---------- CONTENT ---------- */
+/* -------- COMMON -------- */
 header{
   text-align:center;
   padding:70px 20px;
-  backdrop-filter:blur(6px);
 }
 header h1{color:#00eaff;font-size:38px;margin:0}
 header p{opacity:.9}
 
 .section{
-  max-width:1100px;
-  margin:40px auto;
+  max-width:1150px;
+  margin:50px auto;
   padding:30px;
-  background:rgba(255,255,255,0.08);
-  border-radius:16px;
+  background:rgba(255,255,255,.08);
+  border-radius:18px;
   backdrop-filter:blur(8px);
+  animation:fadeUp 1s ease;
 }
-h2{color:#00eaff}
+h2{color:#00eaff;text-align:center;margin-top:0}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:rgba(255,255,255,.12);
+  padding:20px;
+  border-radius:16px;
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 25px rgba(0,255,255,.35);
+}
+
+.price{
+  font-size:32px;
+  font-weight:bold;
+  margin-top:10px;
+}
 
 .btn{
   display:inline-block;
@@ -129,59 +80,36 @@ h2{color:#00eaff}
   color:#000;
   padding:12px 20px;
   border-radius:10px;
-  text-decoration:none;
   font-weight:bold;
+  text-decoration:none;
 }
 
-/* ---------- CHATBOT ---------- */
-#chatbot{
-  position:fixed;
-  bottom:20px;
-  left:20px;
-  width:300px;
-  background:#0b132f;
-  border-radius:14px;
-  overflow:hidden;
-  display:none;
-  box-shadow:0 0 20px rgba(0,255,255,.4);
-}
-#chat-header{
-  background:#00eaff;
-  color:#000;
-  padding:10px;
-  font-weight:bold;
-}
-#chat-body{
-  height:220px;
-  padding:10px;
-  overflow-y:auto;
-  font-size:14px;
-}
-#chat-input{display:flex}
-#chat-input input{
-  flex:1;
-  padding:10px;
-  border:none;
-}
-#chat-input button{
-  background:#00eaff;
-  border:none;
-  padding:10px;
-  cursor:pointer;
-}
-#chat-toggle{
-  position:fixed;
-  bottom:20px;
-  left:20px;
-  background:#00eaff;
-  color:#000;
+/* -------- FORM -------- */
+input,select{
+  width:100%;
   padding:14px;
-  border-radius:50%;
-  cursor:pointer;
-  font-size:20px;
-  box-shadow:0 0 20px rgba(0,255,255,.5);
+  margin-bottom:14px;
+  border-radius:10px;
+  border:none;
+}
+
+/* -------- ANIMATION -------- */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1}
 }
 </style>
+
+<script>
+function sendToWhatsApp(){
+  let name=document.getElementById("name").value;
+  let phone=document.getElementById("phone").value;
+  let service=document.getElementById("service").value;
+
+  let msg=`Hi Hazel Projects,%0AName: ${name}%0APhone: ${phone}%0AService Needed: ${service}`;
+  window.open("https://wa.me/919791871615?text="+msg,"_blank");
+}
+</script>
 </head>
 
 <body>
@@ -190,66 +118,73 @@ h2{color:#00eaff}
 
 <header>
 <h1>Hazel Projects</h1>
-<p>School • Arduino • ESP32 • Mini • Final Year Engineering Projects</p>
+<p>School • College • Arduino • ESP32 • IoT • AI • Mechanical • ECE Projects</p>
 <a class="btn" href="https://wa.me/919791871615">WhatsApp Now</a>
 </header>
 
-<div class="section">
-<h2>Project Centre Near You</h2>
-<p>
-Hazel Projects provides <strong>school projects</strong>,
-<strong>Arduino & ESP32 projects</strong>,
-<strong>mini engineering projects</strong> and
-<strong>final year engineering projects</strong>.
-</p>
-
-<p>
-We offer <strong>low cost projects</strong>, clear explanation and fast WhatsApp support.
-Physical centre is located in Ayapakkam, Chennai.
-</p>
+<!-- SERVICES -->
+<section class="section">
+<h2>Our Services</h2>
+<div class="grid">
+  <div class="card">🏫 School Projects</div>
+  <div class="card">🎓 College Projects</div>
+  <div class="card">🔌 Arduino UNO Projects</div>
+  <div class="card">📡 ESP32 Projects</div>
+  <div class="card">🌐 IoT Projects</div>
+  <div class="card">🤖 AI / ML Projects</div>
+  <div class="card">⚙️ Mechanical Projects</div>
+  <div class="card">📘 ECE Projects</div>
+  <div class="card">🖨️ 3D Printing Services</div>
 </div>
+</section>
 
-<!-- CHATBOT -->
-<div id="chat-toggle">🤖</div>
-
-<div id="chatbot">
-  <div id="chat-header">AI Assistant</div>
-  <div id="chat-body">
-    <div><b>Bot:</b> Hi 👋 Ask me about projects or pricing.</div>
+<!-- PRICING -->
+<section class="section">
+<h2>Project Pricing</h2>
+<div class="grid">
+  <div class="card">
+    <h3>School Projects</h3>
+    <div class="price">₹999</div>
   </div>
-  <div id="chat-input">
-    <input id="userMsg" placeholder="Type here...">
-    <button onclick="sendMsg()">➤</button>
+  <div class="card">
+    <h3>Arduino / ESP32 Basics</h3>
+    <div class="price">₹1599</div>
+  </div>
+  <div class="card">
+    <h3>Mini Projects</h3>
+    <div class="price">₹2999</div>
+  </div>
+  <div class="card">
+    <h3>Final Year Projects</h3>
+    <div class="price">₹9999</div>
   </div>
 </div>
+</section>
 
-<script>
-const bot=document.getElementById("chatbot");
-document.getElementById("chat-toggle").onclick=()=>{
-  bot.style.display=bot.style.display==="none"?"block":"none";
-};
+<!-- LEAD FORM -->
+<section class="section">
+<h2>Get Project Quote</h2>
+<form onsubmit="sendToWhatsApp();return false;">
+  <input id="name" placeholder="Your Name" required>
+  <input id="phone" placeholder="Mobile Number" required>
+  <select id="service">
+    <option>School Project</option>
+    <option>Arduino UNO Project</option>
+    <option>ESP32 Project</option>
+    <option>IoT Project</option>
+    <option>AI / ML Project</option>
+    <option>Mechanical Project</option>
+    <option>ECE Project</option>
+    <option>Final Year Project</option>
+    <option>3D Printing</option>
+  </select>
+  <button class="btn" type="submit">Submit & WhatsApp</button>
+</form>
+</section>
 
-function sendMsg(){
- let msg=document.getElementById("userMsg").value.toLowerCase();
- let body=document.getElementById("chat-body");
- body.innerHTML+=`<div><b>You:</b> ${msg}</div>`;
-
- let reply="Please contact us on WhatsApp for more details 😊";
-
- if(msg.includes("price"))
-   reply="School ₹999 | Arduino/ESP32 ₹1555 | Mini ₹2999 | Final Year ₹9999";
- if(msg.includes("school"))
-   reply="We provide school science projects with demo & explanation.";
- if(msg.includes("arduino") || msg.includes("esp32"))
-   reply="Arduino & ESP32 projects with code and explanation.";
- if(msg.includes("near") || msg.includes("location"))
-   reply="We support students across India. Physical centre is in Chennai.";
-
- body.innerHTML+=`<div><b>Bot:</b> ${reply}</div>`;
- document.getElementById("userMsg").value="";
- body.scrollTop=body.scrollHeight;
-}
-</script>
+<footer style="text-align:center;padding:25px;opacity:.8">
+© Hazel Projects • Project Centre Near You
+</footer>
 
 </body>
 </html>
