@@ -6,7 +6,7 @@
 
 <title>Hazel Projects | Project Centre Near Me | India</title>
 
-<meta name="description" content="Hazel Projects – project centre near me in India. School projects ₹999, Arduino & ESP32 projects ₹1555, mini projects ₹2999, final year engineering projects ₹9999. Serving Chennai, Tamil Nadu and all Indian cities.">
+<meta name="description" content="Hazel Projects – project centre near me providing school projects, Arduino & ESP32 projects, mini and final year engineering projects across India.">
 
 <meta name="keywords" content="
 project centre near me,
@@ -32,12 +32,17 @@ project centre Pune,
 project centre Kolkata,
 project centre Ahmedabad,
 project centre Jaipur,
+project centre Kochi,
+project centre Trivandrum,
 project centre Kerala,
 project centre Tamil Nadu,
 project centre Karnataka,
 project centre Andhra Pradesh,
 project centre Telangana,
 project centre Maharashtra,
+project centre Gujarat,
+project centre Rajasthan,
+project centre West Bengal,
 project centre India,
 Hazel Projects Ayapakkam
 ">
@@ -47,13 +52,13 @@ Hazel Projects Ayapakkam
 
 <meta name="google-site-verification" content="BiOVrOmzMKOg3ooaC-ggbZ_QiA_QXSpCn-16-h9XQ1Y">
 
-<!-- LOCAL BUSINESS SCHEMA (INDIA WIDE) -->
+<!-- LOCAL BUSINESS SCHEMA (CITIES/STATES FOR SEARCH ENGINE ONLY) -->
 <script type="application/ld+json">
 {
  "@context":"https://schema.org",
  "@type":"LocalBusiness",
  "name":"Hazel Projects",
- "description":"Project centre near me providing school, Arduino, ESP32, mini and final year engineering projects across India.",
+ "description":"Project centre providing school, Arduino, ESP32, mini and final year engineering projects across India.",
  "url":"https://arunoff01-rgb.github.io/hazelprojects/",
  "telephone":"+919791871615",
  "address":{
@@ -64,8 +69,9 @@ Hazel Projects Ayapakkam
    "addressCountry":"IN"
  },
  "areaServed":[
+   "India",
    "Tamil Nadu","Karnataka","Kerala","Andhra Pradesh","Telangana",
-   "Maharashtra","Gujarat","Rajasthan","Delhi","West Bengal","India"
+   "Maharashtra","Gujarat","Rajasthan","West Bengal","Delhi"
  ],
  "openingHours":"Mo-Su 09:00-21:00",
  "priceRange":"₹999 - ₹9999+",
@@ -184,37 +190,22 @@ h2{color:#00eaff}
 
 <header>
 <h1>Hazel Projects</h1>
-<p>Project Centre Near You – Serving All Cities in India</p>
+<p>School • Arduino • ESP32 • Mini • Final Year Engineering Projects</p>
 <a class="btn" href="https://wa.me/919791871615">WhatsApp Now</a>
 </header>
 
 <div class="section">
-<h2>Project Centre Near Me – India Wide</h2>
+<h2>Project Centre Near You</h2>
 <p>
-Hazel Projects is a <strong>project centre near you</strong> providing
-<strong>school projects (₹999), Arduino & ESP32 projects (₹1555),
-mini engineering projects (₹2999) and final year projects (₹9999)</strong>.
+Hazel Projects provides <strong>school projects</strong>,
+<strong>Arduino & ESP32 projects</strong>,
+<strong>mini engineering projects</strong> and
+<strong>final year engineering projects</strong>.
 </p>
 
 <p>
-We serve students from <strong>Chennai, Coimbatore, Madurai, Trichy, Salem,
-Erode, Tirunelveli, Vellore, Bangalore, Hyderabad, Kochi, Trivandrum,
-Mumbai, Pune, Delhi, Ahmedabad, Jaipur, Kolkata</strong> and
-<strong>all states across India</strong> through WhatsApp support.
-</p>
-
-<p>
-Students often search us as:
-<em>
-project centre near me, engineering project centre near me,
-Arduino project centre near me, ESP32 project centre India,
-final year project centre near me
-</em>.
-</p>
-
-<p>
-📍 Physical location: Ayapakkam, Chennai (Tamil Nadu)<br>
-📦 Online support available for all Indian cities & states
+We offer <strong>low cost projects</strong>, clear explanation and fast WhatsApp support.
+Physical centre is located in Ayapakkam, Chennai.
 </p>
 </div>
 
@@ -224,7 +215,7 @@ final year project centre near me
 <div id="chatbot">
   <div id="chat-header">AI Assistant</div>
   <div id="chat-body">
-    <div><b>Bot:</b> Hi 👋 Ask me about projects, pricing or location.</div>
+    <div><b>Bot:</b> Hi 👋 Ask me about projects or pricing.</div>
   </div>
   <div id="chat-input">
     <input id="userMsg" placeholder="Type here...">
@@ -248,11 +239,11 @@ function sendMsg(){
  if(msg.includes("price"))
    reply="School ₹999 | Arduino/ESP32 ₹1555 | Mini ₹2999 | Final Year ₹9999";
  if(msg.includes("school"))
-   reply="We provide school science projects for CBSE & State Board students.";
+   reply="We provide school science projects with demo & explanation.";
  if(msg.includes("arduino") || msg.includes("esp32"))
    reply="Arduino & ESP32 projects with code and explanation.";
- if(msg.includes("location") || msg.includes("near me"))
-   reply="We serve all cities in India. Physical centre is in Ayapakkam, Chennai.";
+ if(msg.includes("near") || msg.includes("location"))
+   reply="We support students across India. Physical centre is in Chennai.";
 
  body.innerHTML+=`<div><b>Bot:</b> ${reply}</div>`;
  document.getElementById("userMsg").value="";
