@@ -6,7 +6,7 @@
 
 <title>Hazel Projects | Project Centre Near Me | India</title>
 
-<meta name="description" content="Hazel Projects – project centre near me providing school, Arduino UNO, ESP32, IoT, AI, mechanical, ECE and final year engineering projects across India.">
+<meta name="description" content="Hazel Projects – project centre near me providing school, Arduino, ESP32, IoT, AI, mechanical, ECE and final year engineering projects across India.">
 
 <meta name="keywords" content="
 project centre near me,
@@ -34,15 +34,8 @@ project centre Ahmedabad,
 project centre Jaipur,
 project centre Kochi,
 project centre Trivandrum,
-project centre Kerala,
 project centre Tamil Nadu,
 project centre Karnataka,
-project centre Andhra Pradesh,
-project centre Telangana,
-project centre Maharashtra,
-project centre Gujarat,
-project centre Rajasthan,
-project centre West Bengal,
 project centre India
 ">
 
@@ -70,7 +63,6 @@ project centre India
 </script>
 
 <style>
-/* BACKGROUND */
 body{
  margin:0;
  font-family:Arial, sans-serif;
@@ -88,9 +80,22 @@ body{
 }
 @keyframes bgmove{to{background-position:0 600px,600px 0;}}
 
-/* COMMON */
 header{text-align:center;padding:70px 20px}
 header h1{color:#00eaff;font-size:38px;margin:0}
+
+.lang-btn{
+ position:fixed;
+ top:15px;
+ right:15px;
+ background:#00eaff;
+ color:#000;
+ border:none;
+ padding:8px 14px;
+ border-radius:8px;
+ font-weight:bold;
+ cursor:pointer;
+}
+
 .section{
  max-width:1200px;
  margin:50px auto;
@@ -99,6 +104,7 @@ header h1{color:#00eaff;font-size:38px;margin:0}
  border-radius:18px;
 }
 h2{text-align:center;color:#00eaff}
+
 .grid{
  display:grid;
  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -113,28 +119,9 @@ h2{text-align:center;color:#00eaff}
  transition:.3s;
 }
 .card:hover{transform:translateY(-8px);box-shadow:0 0 20px rgba(0,255,255,.4)}
+
 .price{font-size:30px;font-weight:bold}
 
-/* MODAL */
-.modal{
- display:none;
- position:fixed;
- inset:0;
- background:rgba(0,0,0,.7);
- align-items:center;
- justify-content:center;
-}
-.modal-content{
- background:#0b132f;
- padding:25px;
- border-radius:16px;
- max-width:500px;
- width:90%;
-}
-.modal h3{color:#00eaff}
-.close{float:right;cursor:pointer}
-
-/* FORM */
 input,select{
  width:100%;
  padding:14px;
@@ -154,12 +141,25 @@ input,select{
 </style>
 
 <script>
-function openModal(id){document.getElementById(id).style.display="flex";}
-function closeModal(id){document.getElementById(id).style.display="none";}
+let lang="en";
+function toggleLang(){
+ lang = lang==="en" ? "ta" : "en";
+ document.getElementById("langBtn").innerText = lang==="en" ? "தமிழ்" : "English";
 
-function sendWA(){
- let n=name.value,p=phone.value,s=service.value;
- let msg=`Hi Hazel Projects,%0AName: ${n}%0APhone: ${p}%0AService: ${s}`;
+ document.querySelectorAll("[data-en]").forEach(el=>{
+   el.innerText = el.getAttribute(lang==="en"?"data-en":"data-ta");
+ });
+}
+
+function sendProject(){
+ let n=pname.value,p=pphone.value,s=pservice.value;
+ let msg=`Hi Hazel Projects,%0AName: ${n}%0APhone: ${p}%0AProject: ${s}`;
+ window.open("https://wa.me/919791871615?text="+msg,"_blank");
+}
+
+function sendCareer(){
+ let n=cname.value,p=cphone.value,r=crole.value;
+ let msg=`Hi Hazel Projects,%0AName: ${n}%0APhone: ${p}%0AInterested Role: ${r}`;
  window.open("https://wa.me/919791871615?text="+msg,"_blank");
 }
 </script>
@@ -168,127 +168,62 @@ function sendWA(){
 <body>
 <div id="bg"></div>
 
+<button id="langBtn" class="lang-btn" onclick="toggleLang()">தமிழ்</button>
+
 <header>
 <h1>Hazel Projects</h1>
-<p>School • College • Arduino • ESP32 • IoT • AI • Mechanical • ECE</p>
+<p data-en="Project Centre for Students & Engineers"
+   data-ta="மாணவர்கள் மற்றும் பொறியாளர்களுக்கான Project Centre"></p>
 </header>
 
-<!-- SERVICES -->
 <section class="section">
-<h2>Our Services (Click to View Topics)</h2>
+<h2 data-en="Our Services" data-ta="எங்கள் சேவைகள்"></h2>
 <div class="grid">
- <div class="card" onclick="openModal('school')">🏫 School Projects</div>
- <div class="card" onclick="openModal('arduino')">🔌 Arduino / ESP32</div>
- <div class="card" onclick="openModal('iot')">🌐 IoT Projects</div>
- <div class="card" onclick="openModal('ai')">🤖 AI / ML Projects</div>
- <div class="card" onclick="openModal('mech')">⚙️ Mechanical Projects</div>
- <div class="card" onclick="openModal('ece')">📘 ECE Projects</div>
+ <div class="card" data-en="School Projects" data-ta="பள்ளி திட்டங்கள்"></div>
+ <div class="card" data-en="Arduino / ESP32" data-ta="Arduino / ESP32"></div>
+ <div class="card" data-en="IoT Projects" data-ta="IoT திட்டங்கள்"></div>
+ <div class="card" data-en="AI / ML Projects" data-ta="AI / ML திட்டங்கள்"></div>
+ <div class="card" data-en="Mechanical Projects" data-ta="இயந்திரவியல் திட்டங்கள்"></div>
+ <div class="card" data-en="ECE Projects" data-ta="ECE திட்டங்கள்"></div>
 </div>
 </section>
 
-<!-- PRICING -->
 <section class="section">
-<h2>Project Pricing</h2>
+<h2 data-en="Project Pricing" data-ta="திட்ட விலை"></h2>
 <div class="grid">
- <div class="card"><h3>School</h3><div class="price">₹999</div></div>
- <div class="card"><h3>Arduino / ESP32</h3><div class="price">₹1599</div></div>
- <div class="card"><h3>Mini Projects</h3><div class="price">₹2999</div></div>
- <div class="card"><h3>Final Year</h3><div class="price">₹9999</div></div>
+ <div class="card"><b data-en="School Projects" data-ta="பள்ளி திட்டங்கள்"></b><div class="price">₹999</div></div>
+ <div class="card"><b>Arduino / ESP32</b><div class="price">₹1599</div></div>
+ <div class="card"><b data-en="Mini Projects" data-ta="மினி திட்டங்கள்"></b><div class="price">₹2999</div></div>
+ <div class="card"><b data-en="Final Year Projects" data-ta="இறுதி ஆண்டு திட்டங்கள்"></b><div class="price">₹9999</div></div>
 </div>
 </section>
 
-<!-- CAREER -->
 <section class="section">
-<h2>Career Opportunities</h2>
-<ul>
-<li>Embedded Engineer</li>
-<li>IoT Developer</li>
-<li>AI / ML Engineer</li>
-<li>Robotics Engineer</li>
-<li>Core Mechanical & ECE Roles</li>
-<li>Startup & R&D Exposure</li>
-</ul>
-</section>
-
-<!-- FORM -->
-<section class="section">
-<h2>Get Project Quote</h2>
-<form onsubmit="sendWA();return false;">
- <input id="name" placeholder="Your Name" required>
- <input id="phone" placeholder="Mobile Number" required>
- <select id="service">
-  <option>School Project</option>
-  <option>Arduino / ESP32</option>
-  <option>IoT</option>
-  <option>AI / ML</option>
-  <option>Mechanical</option>
-  <option>ECE</option>
-  <option>Final Year</option>
+<h2 data-en="Project Enquiry" data-ta="திட்ட விசாரணை"></h2>
+<form onsubmit="sendProject();return false;">
+ <input id="pname" placeholder="Name">
+ <input id="pphone" placeholder="Mobile">
+ <select id="pservice">
+  <option>School</option><option>Arduino</option><option>ESP32</option>
+  <option>IoT</option><option>AI / ML</option><option>Final Year</option>
  </select>
- <button class="btn">Submit & WhatsApp</button>
+ <button class="btn" data-en="Submit & WhatsApp" data-ta="WhatsApp மூலம் அனுப்பு"></button>
 </form>
 </section>
 
-<!-- MODALS -->
-<div class="modal" id="school"><div class="modal-content">
-<span class="close" onclick="closeModal('school')">✖</span>
-<h3>School Project Topics</h3>
-<ol>
-<li>Smart Dustbin</li><li>Solar Grass Cutter</li><li>Automatic Street Light</li>
-<li>Rain Alarm</li><li>Water Level Indicator</li><li>Smart Irrigation</li>
-<li>Fire Alarm</li><li>RFID Attendance</li><li>Smart Door</li><li>Traffic Light System</li>
-</ol>
-</div></div>
-
-<div class="modal" id="arduino"><div class="modal-content">
-<span class="close" onclick="closeModal('arduino')">✖</span>
-<h3>Arduino / ESP32 Topics</h3>
-<ol>
-<li>Home Automation</li><li>Smart Parking</li><li>Weather Station</li>
-<li>Gas Leakage Detector</li><li>Smart Energy Meter</li><li>IoT Dashboard</li>
-<li>Smart Agriculture</li><li>Bluetooth Control</li><li>Smart Trolley</li><li>Accident Alert</li>
-</ol>
-</div></div>
-
-<div class="modal" id="iot"><div class="modal-content">
-<span class="close" onclick="closeModal('iot')">✖</span>
-<h3>IoT Project Topics</h3>
-<ol>
-<li>Smart City</li><li>Industrial Monitoring</li><li>Smart Health</li>
-<li>Water Quality Monitoring</li><li>Smart Grid</li><li>Asset Tracking</li>
-<li>Smart Farming</li><li>Energy Monitoring</li><li>Home IoT</li><li>Air Quality</li>
-</ol>
-</div></div>
-
-<div class="modal" id="ai"><div class="modal-content">
-<span class="close" onclick="closeModal('ai')">✖</span>
-<h3>AI / ML Topics</h3>
-<ol>
-<li>Face Recognition</li><li>Chatbot</li><li>Accident Detection</li>
-<li>Voice Assistant</li><li>Image Classification</li><li>Spam Detection</li>
-<li>Traffic Prediction</li><li>Smart Surveillance</li><li>Emotion Detection</li><li>AI Recommendation</li>
-</ol>
-</div></div>
-
-<div class="modal" id="mech"><div class="modal-content">
-<span class="close" onclick="closeModal('mech')">✖</span>
-<h3>Mechanical Topics</h3>
-<ol>
-<li>Solar Grass Cutter</li><li>Pneumatic Bumper</li><li>Automatic Brake</li>
-<li>Regenerative Braking</li><li>Wind Power Model</li><li>Hydraulic Lift</li>
-<li>Robotic Arm</li><li>Conveyor System</li><li>EV Chassis</li><li>Smart Manufacturing</li>
-</ol>
-</div></div>
-
-<div class="modal" id="ece"><div class="modal-content">
-<span class="close" onclick="closeModal('ece')">✖</span>
-<h3>ECE Project Topics</h3>
-<ol>
-<li>Smart Meter</li><li>5G Antenna Model</li><li>RF Communication</li>
-<li>Embedded Security</li><li>DSP Applications</li><li>IoT Sensors</li>
-<li>Smart Grid</li><li>Image Processing</li><li>Biomedical System</li><li>Wireless Power</li>
-</ol>
-</div></div>
+<section class="section">
+<h2 data-en="Join With Us" data-ta="எங்களுடன் இணைக"></h2>
+<form onsubmit="sendCareer();return false;">
+ <input id="cname" placeholder="Name">
+ <input id="cphone" placeholder="Mobile">
+ <select id="crole">
+  <option>Student / Internship</option>
+  <option>Part Time</option>
+  <option>Project Assistant</option>
+ </select>
+ <button class="btn" data-en="Apply via WhatsApp" data-ta="WhatsApp மூலம் விண்ணப்பிக்கவும்"></button>
+</form>
+</section>
 
 </body>
 </html>
