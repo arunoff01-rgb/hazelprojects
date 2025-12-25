@@ -4,137 +4,185 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Hazel Projects | Project Centre Near Me | School, College & Engineering Projects</title>
+<title>Hazel Projects | Project Centre Near Me | India</title>
 
-<meta name="description" content="Hazel Projects – project centre near me providing school projects, Arduino UNO, ESP32, IoT, AI, mechanical, ECE and final year engineering projects.">
+<meta name="description" content="Hazel Projects – project centre near me providing school, Arduino UNO, ESP32, IoT, AI, mechanical, ECE and final year engineering projects across India.">
+
+<meta name="keywords" content="
+project centre near me,
+engineering project centre near me,
+school project centre near me,
+Arduino project centre near me,
+ESP32 project centre near me,
+mini project centre near me,
+final year project centre near me,
+project centre Chennai,
+project centre Bangalore,
+project centre Hyderabad,
+project centre Coimbatore,
+project centre Madurai,
+project centre Trichy,
+project centre Salem,
+project centre Erode,
+project centre Tirunelveli,
+project centre Vellore,
+project centre Delhi,
+project centre Mumbai,
+project centre Pune,
+project centre Kolkata,
+project centre Ahmedabad,
+project centre Jaipur,
+project centre Kochi,
+project centre Trivandrum,
+project centre Kerala,
+project centre Tamil Nadu,
+project centre Karnataka,
+project centre Andhra Pradesh,
+project centre Telangana,
+project centre Maharashtra,
+project centre Gujarat,
+project centre Rajasthan,
+project centre West Bengal,
+project centre India
+">
+
 <meta name="robots" content="index, follow">
 
+<!-- LOCAL BUSINESS SCHEMA (SEO ONLY) -->
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"LocalBusiness",
+ "name":"Hazel Projects",
+ "description":"Project centre providing school, Arduino, ESP32, IoT, AI, mechanical, ECE and final year engineering projects across India.",
+ "telephone":"+919791871615",
+ "address":{
+   "@type":"PostalAddress",
+   "streetAddress":"Ayapakkam",
+   "addressLocality":"Chennai",
+   "addressRegion":"Tamil Nadu",
+   "addressCountry":"IN"
+ },
+ "areaServed":["India"],
+ "priceRange":"₹999 - ₹9999+",
+ "sameAs":["https://wa.me/919791871615"]
+}
+</script>
+
 <style>
-/* -------- ROBOTIC BACKGROUND -------- */
+/* BACKGROUND */
 body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#050b1e;
-  color:#fff;
+ margin:0;
+ font-family:Arial, sans-serif;
+ background:#050b1e;
+ color:#fff;
 }
-#robot-bg{
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(0,255,255,.15), transparent 40%),
-    radial-gradient(circle at 80% 60%, rgba(0,120,255,.15), transparent 40%),
-    repeating-linear-gradient(0deg, rgba(0,255,255,.05) 0 1px, transparent 1px 60px),
-    repeating-linear-gradient(90deg, rgba(0,255,255,.05) 0 1px, transparent 1px 60px);
-  animation:moveGrid 20s linear infinite;
+#bg{
+ position:fixed;
+ inset:0;
+ z-index:-1;
+ background:
+  repeating-linear-gradient(0deg, rgba(0,255,255,.05) 0 1px, transparent 1px 60px),
+  repeating-linear-gradient(90deg, rgba(0,255,255,.05) 0 1px, transparent 1px 60px);
+ animation:bgmove 20s linear infinite;
 }
-@keyframes moveGrid{
-  to{background-position:0 0,0 0,0 600px,600px 0;}
-}
+@keyframes bgmove{to{background-position:0 600px,600px 0;}}
 
-/* -------- COMMON -------- */
-header{
-  text-align:center;
-  padding:70px 20px;
-}
+/* COMMON */
+header{text-align:center;padding:70px 20px}
 header h1{color:#00eaff;font-size:38px;margin:0}
-header p{opacity:.9}
-
 .section{
-  max-width:1150px;
-  margin:50px auto;
-  padding:30px;
-  background:rgba(255,255,255,.08);
-  border-radius:18px;
-  backdrop-filter:blur(8px);
-  animation:fadeUp 1s ease;
+ max-width:1200px;
+ margin:50px auto;
+ padding:30px;
+ background:rgba(255,255,255,.08);
+ border-radius:18px;
 }
-h2{color:#00eaff;text-align:center;margin-top:0}
-
+h2{text-align:center;color:#00eaff}
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:20px;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:20px;
 }
-
 .card{
-  background:rgba(255,255,255,.12);
-  padding:20px;
-  border-radius:16px;
-  transition:.4s;
+ background:rgba(255,255,255,.12);
+ padding:20px;
+ border-radius:14px;
+ text-align:center;
+ cursor:pointer;
+ transition:.3s;
 }
-.card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 0 25px rgba(0,255,255,.35);
-}
+.card:hover{transform:translateY(-8px);box-shadow:0 0 20px rgba(0,255,255,.4)}
+.price{font-size:30px;font-weight:bold}
 
-.price{
-  font-size:32px;
-  font-weight:bold;
-  margin-top:10px;
+/* MODAL */
+.modal{
+ display:none;
+ position:fixed;
+ inset:0;
+ background:rgba(0,0,0,.7);
+ align-items:center;
+ justify-content:center;
 }
-
-.btn{
-  display:inline-block;
-  background:#00eaff;
-  color:#000;
-  padding:12px 20px;
-  border-radius:10px;
-  font-weight:bold;
-  text-decoration:none;
+.modal-content{
+ background:#0b132f;
+ padding:25px;
+ border-radius:16px;
+ max-width:500px;
+ width:90%;
 }
+.modal h3{color:#00eaff}
+.close{float:right;cursor:pointer}
 
-/* -------- FORM -------- */
+/* FORM */
 input,select{
-  width:100%;
-  padding:14px;
-  margin-bottom:14px;
-  border-radius:10px;
-  border:none;
+ width:100%;
+ padding:14px;
+ margin-bottom:14px;
+ border-radius:10px;
+ border:none;
 }
-
-/* -------- ANIMATION -------- */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px)}
-  to{opacity:1}
+.btn{
+ background:#00eaff;
+ color:#000;
+ padding:12px 20px;
+ border-radius:10px;
+ font-weight:bold;
+ border:none;
+ cursor:pointer;
 }
 </style>
 
 <script>
-function sendToWhatsApp(){
-  let name=document.getElementById("name").value;
-  let phone=document.getElementById("phone").value;
-  let service=document.getElementById("service").value;
+function openModal(id){document.getElementById(id).style.display="flex";}
+function closeModal(id){document.getElementById(id).style.display="none";}
 
-  let msg=`Hi Hazel Projects,%0AName: ${name}%0APhone: ${phone}%0AService Needed: ${service}`;
-  window.open("https://wa.me/919791871615?text="+msg,"_blank");
+function sendWA(){
+ let n=name.value,p=phone.value,s=service.value;
+ let msg=`Hi Hazel Projects,%0AName: ${n}%0APhone: ${p}%0AService: ${s}`;
+ window.open("https://wa.me/919791871615?text="+msg,"_blank");
 }
 </script>
 </head>
 
 <body>
-
-<div id="robot-bg"></div>
+<div id="bg"></div>
 
 <header>
 <h1>Hazel Projects</h1>
-<p>School • College • Arduino • ESP32 • IoT • AI • Mechanical • ECE Projects</p>
-<a class="btn" href="https://wa.me/919791871615">WhatsApp Now</a>
+<p>School • College • Arduino • ESP32 • IoT • AI • Mechanical • ECE</p>
 </header>
 
 <!-- SERVICES -->
 <section class="section">
-<h2>Our Services</h2>
+<h2>Our Services (Click to View Topics)</h2>
 <div class="grid">
-  <div class="card">🏫 School Projects</div>
-  <div class="card">🎓 College Projects</div>
-  <div class="card">🔌 Arduino UNO Projects</div>
-  <div class="card">📡 ESP32 Projects</div>
-  <div class="card">🌐 IoT Projects</div>
-  <div class="card">🤖 AI / ML Projects</div>
-  <div class="card">⚙️ Mechanical Projects</div>
-  <div class="card">📘 ECE Projects</div>
-  <div class="card">🖨️ 3D Printing Services</div>
+ <div class="card" onclick="openModal('school')">🏫 School Projects</div>
+ <div class="card" onclick="openModal('arduino')">🔌 Arduino / ESP32</div>
+ <div class="card" onclick="openModal('iot')">🌐 IoT Projects</div>
+ <div class="card" onclick="openModal('ai')">🤖 AI / ML Projects</div>
+ <div class="card" onclick="openModal('mech')">⚙️ Mechanical Projects</div>
+ <div class="card" onclick="openModal('ece')">📘 ECE Projects</div>
 </div>
 </section>
 
@@ -142,49 +190,105 @@ function sendToWhatsApp(){
 <section class="section">
 <h2>Project Pricing</h2>
 <div class="grid">
-  <div class="card">
-    <h3>School Projects</h3>
-    <div class="price">₹999</div>
-  </div>
-  <div class="card">
-    <h3>Arduino / ESP32 Basics</h3>
-    <div class="price">₹1599</div>
-  </div>
-  <div class="card">
-    <h3>Mini Projects</h3>
-    <div class="price">₹2999</div>
-  </div>
-  <div class="card">
-    <h3>Final Year Projects</h3>
-    <div class="price">₹9999</div>
-  </div>
+ <div class="card"><h3>School</h3><div class="price">₹999</div></div>
+ <div class="card"><h3>Arduino / ESP32</h3><div class="price">₹1599</div></div>
+ <div class="card"><h3>Mini Projects</h3><div class="price">₹2999</div></div>
+ <div class="card"><h3>Final Year</h3><div class="price">₹9999</div></div>
 </div>
 </section>
 
-<!-- LEAD FORM -->
+<!-- CAREER -->
+<section class="section">
+<h2>Career Opportunities</h2>
+<ul>
+<li>Embedded Engineer</li>
+<li>IoT Developer</li>
+<li>AI / ML Engineer</li>
+<li>Robotics Engineer</li>
+<li>Core Mechanical & ECE Roles</li>
+<li>Startup & R&D Exposure</li>
+</ul>
+</section>
+
+<!-- FORM -->
 <section class="section">
 <h2>Get Project Quote</h2>
-<form onsubmit="sendToWhatsApp();return false;">
-  <input id="name" placeholder="Your Name" required>
-  <input id="phone" placeholder="Mobile Number" required>
-  <select id="service">
-    <option>School Project</option>
-    <option>Arduino UNO Project</option>
-    <option>ESP32 Project</option>
-    <option>IoT Project</option>
-    <option>AI / ML Project</option>
-    <option>Mechanical Project</option>
-    <option>ECE Project</option>
-    <option>Final Year Project</option>
-    <option>3D Printing</option>
-  </select>
-  <button class="btn" type="submit">Submit & WhatsApp</button>
+<form onsubmit="sendWA();return false;">
+ <input id="name" placeholder="Your Name" required>
+ <input id="phone" placeholder="Mobile Number" required>
+ <select id="service">
+  <option>School Project</option>
+  <option>Arduino / ESP32</option>
+  <option>IoT</option>
+  <option>AI / ML</option>
+  <option>Mechanical</option>
+  <option>ECE</option>
+  <option>Final Year</option>
+ </select>
+ <button class="btn">Submit & WhatsApp</button>
 </form>
 </section>
 
-<footer style="text-align:center;padding:25px;opacity:.8">
-© Hazel Projects • Project Centre Near You
-</footer>
+<!-- MODALS -->
+<div class="modal" id="school"><div class="modal-content">
+<span class="close" onclick="closeModal('school')">✖</span>
+<h3>School Project Topics</h3>
+<ol>
+<li>Smart Dustbin</li><li>Solar Grass Cutter</li><li>Automatic Street Light</li>
+<li>Rain Alarm</li><li>Water Level Indicator</li><li>Smart Irrigation</li>
+<li>Fire Alarm</li><li>RFID Attendance</li><li>Smart Door</li><li>Traffic Light System</li>
+</ol>
+</div></div>
+
+<div class="modal" id="arduino"><div class="modal-content">
+<span class="close" onclick="closeModal('arduino')">✖</span>
+<h3>Arduino / ESP32 Topics</h3>
+<ol>
+<li>Home Automation</li><li>Smart Parking</li><li>Weather Station</li>
+<li>Gas Leakage Detector</li><li>Smart Energy Meter</li><li>IoT Dashboard</li>
+<li>Smart Agriculture</li><li>Bluetooth Control</li><li>Smart Trolley</li><li>Accident Alert</li>
+</ol>
+</div></div>
+
+<div class="modal" id="iot"><div class="modal-content">
+<span class="close" onclick="closeModal('iot')">✖</span>
+<h3>IoT Project Topics</h3>
+<ol>
+<li>Smart City</li><li>Industrial Monitoring</li><li>Smart Health</li>
+<li>Water Quality Monitoring</li><li>Smart Grid</li><li>Asset Tracking</li>
+<li>Smart Farming</li><li>Energy Monitoring</li><li>Home IoT</li><li>Air Quality</li>
+</ol>
+</div></div>
+
+<div class="modal" id="ai"><div class="modal-content">
+<span class="close" onclick="closeModal('ai')">✖</span>
+<h3>AI / ML Topics</h3>
+<ol>
+<li>Face Recognition</li><li>Chatbot</li><li>Accident Detection</li>
+<li>Voice Assistant</li><li>Image Classification</li><li>Spam Detection</li>
+<li>Traffic Prediction</li><li>Smart Surveillance</li><li>Emotion Detection</li><li>AI Recommendation</li>
+</ol>
+</div></div>
+
+<div class="modal" id="mech"><div class="modal-content">
+<span class="close" onclick="closeModal('mech')">✖</span>
+<h3>Mechanical Topics</h3>
+<ol>
+<li>Solar Grass Cutter</li><li>Pneumatic Bumper</li><li>Automatic Brake</li>
+<li>Regenerative Braking</li><li>Wind Power Model</li><li>Hydraulic Lift</li>
+<li>Robotic Arm</li><li>Conveyor System</li><li>EV Chassis</li><li>Smart Manufacturing</li>
+</ol>
+</div></div>
+
+<div class="modal" id="ece"><div class="modal-content">
+<span class="close" onclick="closeModal('ece')">✖</span>
+<h3>ECE Project Topics</h3>
+<ol>
+<li>Smart Meter</li><li>5G Antenna Model</li><li>RF Communication</li>
+<li>Embedded Security</li><li>DSP Applications</li><li>IoT Sensors</li>
+<li>Smart Grid</li><li>Image Processing</li><li>Biomedical System</li><li>Wireless Power</li>
+</ol>
+</div></div>
 
 </body>
 </html>
