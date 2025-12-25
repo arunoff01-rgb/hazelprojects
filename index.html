@@ -4,22 +4,56 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Hazel Projects Ayapakkam | School, Arduino, ESP32 & Final Year Projects Chennai</title>
+<title>Hazel Projects | Project Centre Near Me | India</title>
 
-<meta name="description" content="Hazel Projects Ayapakkam Chennai – School projects from ₹999, Arduino & ESP32 projects ₹1555, Mini projects ₹2999, Final year engineering projects ₹9999. Low cost student projects in Tamil Nadu.">
-<meta name="keywords" content="school projects Chennai, school projects Tamil Nadu, Arduino projects Chennai, ESP32 projects India, mini projects Chennai, final year projects Tamil Nadu, low cost engineering projects, Hazel Projects Ayapakkam">
+<meta name="description" content="Hazel Projects – project centre near me in India. School projects ₹999, Arduino & ESP32 projects ₹1555, mini projects ₹2999, final year engineering projects ₹9999. Serving Chennai, Tamil Nadu and all Indian cities.">
+
+<meta name="keywords" content="
+project centre near me,
+engineering project centre near me,
+school project centre near me,
+Arduino project centre near me,
+ESP32 project centre near me,
+mini project centre near me,
+final year project centre near me,
+project centre Chennai,
+project centre Bangalore,
+project centre Hyderabad,
+project centre Coimbatore,
+project centre Madurai,
+project centre Trichy,
+project centre Salem,
+project centre Erode,
+project centre Tirunelveli,
+project centre Vellore,
+project centre Delhi,
+project centre Mumbai,
+project centre Pune,
+project centre Kolkata,
+project centre Ahmedabad,
+project centre Jaipur,
+project centre Kerala,
+project centre Tamil Nadu,
+project centre Karnataka,
+project centre Andhra Pradesh,
+project centre Telangana,
+project centre Maharashtra,
+project centre India,
+Hazel Projects Ayapakkam
+">
+
 <meta name="author" content="Hazel Projects">
 <meta name="robots" content="index, follow">
 
 <meta name="google-site-verification" content="BiOVrOmzMKOg3ooaC-ggbZ_QiA_QXSpCn-16-h9XQ1Y">
 
-<!-- Local Business + India SEO -->
+<!-- LOCAL BUSINESS SCHEMA (INDIA WIDE) -->
 <script type="application/ld+json">
 {
  "@context":"https://schema.org",
  "@type":"LocalBusiness",
  "name":"Hazel Projects",
- "description":"Low cost school, Arduino, ESP32, mini and final year engineering projects in Chennai and Tamil Nadu.",
+ "description":"Project centre near me providing school, Arduino, ESP32, mini and final year engineering projects across India.",
  "url":"https://arunoff01-rgb.github.io/hazelprojects/",
  "telephone":"+919791871615",
  "address":{
@@ -29,219 +63,202 @@
    "addressRegion":"Tamil Nadu",
    "addressCountry":"IN"
  },
- "areaServed":["Chennai","Tamil Nadu","India"],
+ "areaServed":[
+   "Tamil Nadu","Karnataka","Kerala","Andhra Pradesh","Telangana",
+   "Maharashtra","Gujarat","Rajasthan","Delhi","West Bengal","India"
+ ],
  "openingHours":"Mo-Su 09:00-21:00",
  "priceRange":"₹999 - ₹9999+",
  "sameAs":["https://wa.me/919791871615"]
 }
 </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
 <style>
-:root{
- --blue:#0b5cff;
- --green:#00c897;
- --orange:#ff8a00;
- --purple:#7a5cff;
- --bg:#f4f8ff;
- --card:#ffffff;
- --muted:#555;
-}
-*{box-sizing:border-box}
+/* ---------- ROBOTIC BACKGROUND ---------- */
 body{
- margin:0;
- font-family:Inter,system-ui;
- background:var(--bg);
- color:#000;
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#050b1e;
+  color:#fff;
+  overflow-x:hidden;
 }
+#robot-bg{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0,255,255,0.15), transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(0,120,255,0.15), transparent 40%),
+    repeating-linear-gradient(0deg, rgba(0,255,255,0.05) 0 1px, transparent 1px 60px),
+    repeating-linear-gradient(90deg, rgba(0,255,255,0.05) 0 1px, transparent 1px 60px);
+  animation:gridMove 20s linear infinite;
+}
+@keyframes gridMove{
+  from{background-position:0 0,0 0,0 0,0 0;}
+  to{background-position:0 0,0 0,0 600px,600px 0;}
+}
+
+/* ---------- CONTENT ---------- */
 header{
- text-align:center;
- padding:52px 16px;
- background:linear-gradient(135deg,#ffffff,#e9f1ff);
- animation:fadeDown 1s ease;
+  text-align:center;
+  padding:70px 20px;
+  backdrop-filter:blur(6px);
 }
-header h1{
- font-family:Orbitron;
- color:var(--blue);
- font-size:36px;
- margin:0;
+header h1{color:#00eaff;font-size:38px;margin:0}
+header p{opacity:.9}
+
+.section{
+  max-width:1100px;
+  margin:40px auto;
+  padding:30px;
+  background:rgba(255,255,255,0.08);
+  border-radius:16px;
+  backdrop-filter:blur(8px);
 }
-header p{color:var(--muted)}
-
-.wrap{max-width:1200px;margin:auto;padding:26px}
-
-.section-title{
- font-family:Orbitron;
- color:var(--blue);
- margin-top:50px;
-}
-
-.services{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
- gap:22px;
-}
-
-.service{
- background:var(--card);
- padding:22px;
- border-radius:18px;
- box-shadow:0 14px 40px rgba(0,0,0,.08);
- transition:.4s;
- animation:fadeUp .9s ease;
-}
-.service:hover{transform:translateY(-10px)}
-
-.price{
- font-size:22px;
- font-weight:800;
- margin-top:10px;
-}
-
-.school{border-top:6px solid var(--green)}
-.arduino{border-top:6px solid var(--blue)}
-.mini{border-top:6px solid var(--orange)}
-.final{border-top:6px solid var(--purple)}
+h2{color:#00eaff}
 
 .btn{
- display:inline-block;
- background:linear-gradient(90deg,var(--blue),var(--purple));
- color:#fff;
- padding:14px 24px;
- border-radius:14px;
- text-decoration:none;
- font-weight:700;
- margin-top:12px;
- box-shadow:0 14px 35px rgba(11,92,255,.35);
+  display:inline-block;
+  background:#00eaff;
+  color:#000;
+  padding:12px 20px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-input,select{
- width:100%;
- padding:14px;
- border-radius:12px;
- border:1px solid #ccc;
- margin-bottom:14px;
+/* ---------- CHATBOT ---------- */
+#chatbot{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  width:300px;
+  background:#0b132f;
+  border-radius:14px;
+  overflow:hidden;
+  display:none;
+  box-shadow:0 0 20px rgba(0,255,255,.4);
 }
-
-.float{
- position:fixed;
- right:18px;
- bottom:18px;
- z-index:999;
+#chat-header{
+  background:#00eaff;
+  color:#000;
+  padding:10px;
+  font-weight:bold;
 }
-
-@keyframes fadeUp{
- from{opacity:0;transform:translateY(30px)}
- to{opacity:1}
+#chat-body{
+  height:220px;
+  padding:10px;
+  overflow-y:auto;
+  font-size:14px;
 }
-@keyframes fadeDown{
- from{opacity:0;transform:translateY(-30px)}
- to{opacity:1}
+#chat-input{display:flex}
+#chat-input input{
+  flex:1;
+  padding:10px;
+  border:none;
+}
+#chat-input button{
+  background:#00eaff;
+  border:none;
+  padding:10px;
+  cursor:pointer;
+}
+#chat-toggle{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#00eaff;
+  color:#000;
+  padding:14px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:20px;
+  box-shadow:0 0 20px rgba(0,255,255,.5);
 }
 </style>
-
-<script>
-function sendLead(){
- let n=document.getElementById("name").value;
- let p=document.getElementById("phone").value;
- let t=document.getElementById("type").value;
- let msg=`Hi Hazel Projects,%0AName: ${n}%0APhone: ${p}%0AInterested In: ${t}`;
- window.open("https://wa.me/919791871615?text="+msg,"_blank");
-}
-</script>
 </head>
 
 <body>
 
+<div id="robot-bg"></div>
+
 <header>
-<h1>Hazel Projects — Ayapakkam</h1>
-<p>School • Arduino • ESP32 • Mini • Final Year Engineering Projects</p>
+<h1>Hazel Projects</h1>
+<p>Project Centre Near You – Serving All Cities in India</p>
+<a class="btn" href="https://wa.me/919791871615">WhatsApp Now</a>
 </header>
 
-<main class="wrap">
+<div class="section">
+<h2>Project Centre Near Me – India Wide</h2>
+<p>
+Hazel Projects is a <strong>project centre near you</strong> providing
+<strong>school projects (₹999), Arduino & ESP32 projects (₹1555),
+mini engineering projects (₹2999) and final year projects (₹9999)</strong>.
+</p>
 
-<h2 class="section-title">Our Project Services & Pricing</h2>
+<p>
+We serve students from <strong>Chennai, Coimbatore, Madurai, Trichy, Salem,
+Erode, Tirunelveli, Vellore, Bangalore, Hyderabad, Kochi, Trivandrum,
+Mumbai, Pune, Delhi, Ahmedabad, Jaipur, Kolkata</strong> and
+<strong>all states across India</strong> through WhatsApp support.
+</p>
 
-<section class="services">
+<p>
+Students often search us as:
+<em>
+project centre near me, engineering project centre near me,
+Arduino project centre near me, ESP32 project centre India,
+final year project centre near me
+</em>.
+</p>
 
-<div class="service school">
-<h3>🏫 School Projects</h3>
-<ul>
-<li>Science working models</li>
-<li>CBSE & State board syllabus</li>
-<li>Explanation + demo</li>
-</ul>
-<div class="price">Starts from ₹999</div>
+<p>
+📍 Physical location: Ayapakkam, Chennai (Tamil Nadu)<br>
+📦 Online support available for all Indian cities & states
+</p>
 </div>
 
-<div class="service arduino">
-<h3>🔌 Arduino / ESP32 Projects</h3>
-<ul>
-<li>Basic to intermediate level</li>
-<li>IoT & automation projects</li>
-<li>Code + wiring support</li>
-</ul>
-<div class="price">₹1555</div>
+<!-- CHATBOT -->
+<div id="chat-toggle">🤖</div>
+
+<div id="chatbot">
+  <div id="chat-header">AI Assistant</div>
+  <div id="chat-body">
+    <div><b>Bot:</b> Hi 👋 Ask me about projects, pricing or location.</div>
+  </div>
+  <div id="chat-input">
+    <input id="userMsg" placeholder="Type here...">
+    <button onclick="sendMsg()">➤</button>
+  </div>
 </div>
 
-<div class="service mini">
-<h3>⚙️ Mini Engineering Projects</h3>
-<ul>
-<li>Diploma & BE mini projects</li>
-<li>Hardware + demo</li>
-<li>Affordable builds</li>
-</ul>
-<div class="price">₹2999</div>
-</div>
+<script>
+const bot=document.getElementById("chatbot");
+document.getElementById("chat-toggle").onclick=()=>{
+  bot.style.display=bot.style.display==="none"?"block":"none";
+};
 
-<div class="service final">
-<h3>🎓 Final Year Projects</h3>
-<ul>
-<li>Major engineering projects</li>
-<li>Report, code & explanation</li>
-<li>Support till submission</li>
-</ul>
-<div class="price">₹9999</div>
-</div>
+function sendMsg(){
+ let msg=document.getElementById("userMsg").value.toLowerCase();
+ let body=document.getElementById("chat-body");
+ body.innerHTML+=`<div><b>You:</b> ${msg}</div>`;
 
-</section>
+ let reply="Please contact us on WhatsApp for more details 😊";
 
-<h2 class="section-title">Why Students Choose Hazel Projects</h2>
-<div class="service">
-<ul>
-<li>✔ Lowest price in Chennai & Tamil Nadu</li>
-<li>✔ Fast WhatsApp response</li>
-<li>✔ Student-friendly explanation</li>
-<li>✔ Startup support mindset</li>
-<li>✔ Trusted by school & college students</li>
-</ul>
-</div>
+ if(msg.includes("price"))
+   reply="School ₹999 | Arduino/ESP32 ₹1555 | Mini ₹2999 | Final Year ₹9999";
+ if(msg.includes("school"))
+   reply="We provide school science projects for CBSE & State Board students.";
+ if(msg.includes("arduino") || msg.includes("esp32"))
+   reply="Arduino & ESP32 projects with code and explanation.";
+ if(msg.includes("location") || msg.includes("near me"))
+   reply="We serve all cities in India. Physical centre is in Ayapakkam, Chennai.";
 
-<h2 class="section-title">Get Instant Quote</h2>
-<div class="service">
-<form onsubmit="sendLead();return false;">
-<input id="name" placeholder="Your Name" required>
-<input id="phone" placeholder="Mobile Number" required>
-<select id="type">
-<option>School Project (₹999)</option>
-<option>Arduino / ESP32 Project (₹1555)</option>
-<option>Mini Project (₹2999)</option>
-<option>Final Year Project (₹9999)</option>
-</select>
-<button class="btn" type="submit">Submit & WhatsApp</button>
-</form>
-</div>
-
-</main>
-
-<footer style="text-align:center;padding:24px;color:var(--muted)">
-© Hazel Projects • Low Cost Student Projects • Chennai • Tamil Nadu • India
-</footer>
-
-<div class="float">
-<a class="btn" href="https://wa.me/919791871615" target="_blank">💬 Chat</a>
-</div>
+ body.innerHTML+=`<div><b>Bot:</b> ${reply}</div>`;
+ document.getElementById("userMsg").value="";
+ body.scrollTop=body.scrollHeight;
+}
+</script>
 
 </body>
 </html>
