@@ -12,9 +12,6 @@ content="Hazel Projects Chennai provides Arduino, ESP32, IoT, AI, Mechanical, EC
 
 <meta name="robots" content="index,follow">
 
-<meta name="geo.region" content="IN-TN">
-<meta name="geo.placename" content="Chennai">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
@@ -23,50 +20,49 @@ content="Hazel Projects Chennai provides Arduino, ESP32, IoT, AI, Mechanical, EC
 body{
 margin:0;
 font-family:Poppins;
-background:linear-gradient(135deg,#ffffff,#f2f6ff);
-color:#111;
+background:#ff7a00;
+background-image:
+radial-gradient(rgba(0,0,0,.05) 1px, transparent 1px);
+background-size:6px 6px;
+color:#222;
 }
 
 /* ===== NAVBAR ===== */
 nav{
-position:sticky;
-top:0;
-background:white;
+background:#4b2c63;
+color:white;
 display:flex;
 justify-content:space-between;
 padding:15px 40px;
-box-shadow:0 4px 15px rgba(0,0,0,.1);
-z-index:999;
+align-items:center;
 }
 
 nav a{
+color:white;
 text-decoration:none;
 margin-left:20px;
-color:#111;
 font-weight:500;
 }
 
 /* ===== HEADER ===== */
 header{
 text-align:center;
-padding:90px 20px;
+padding:60px 20px;
 }
 
-h1{
-font-size:48px;
-background:linear-gradient(90deg,#000,#666);
--webkit-background-clip:text;
-color:transparent;
+header img{
+width:320px;
+max-width:90%;
 }
 
 /* ===== SECTION ===== */
 .section{
-max-width:1200px;
+max-width:1150px;
 margin:40px auto;
 padding:35px;
 background:white;
 border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
 /* ===== GRID ===== */
@@ -76,32 +72,33 @@ grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
 gap:25px;
 }
 
-/* ===== FUNKY CARD ===== */
+/* ===== CARDS ===== */
 .card{
+background:#fff7ef;
 padding:25px;
-border-radius:16px;
-background:linear-gradient(135deg,#ffffff,#eef3ff);
-transition:.4s;
-cursor:pointer;
+border-radius:14px;
 text-align:center;
+transition:.4s;
+border:2px solid #ffe0c2;
 }
 
 .card:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 15px 35px rgba(0,0,0,.2);
+transform:translateY(-8px);
+box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
 /* ===== BUTTON ===== */
 .btn{
-background:black;
+background:#4b2c63;
 color:white;
 padding:12px 18px;
 border:none;
 border-radius:10px;
 cursor:pointer;
+font-weight:bold;
 }
 
-/* ===== FORM ===== */
+/* ===== INPUT ===== */
 input,select{
 width:100%;
 padding:14px;
@@ -110,78 +107,85 @@ border-radius:10px;
 border:1px solid #ccc;
 }
 
-/* ===== POPUPS ===== */
-.popup{
-position:fixed;
-bottom:20px;
-right:20px;
-background:white;
-padding:20px;
-border-radius:14px;
-box-shadow:0 0 25px rgba(0,0,0,.2);
-display:none;
+/* ===== QUOTE ===== */
+.quote{
+text-align:center;
+font-size:24px;
+font-weight:600;
+color:#4b2c63;
+line-height:1.6;
 }
 
 /* ===== WHATSAPP ===== */
 .whatsapp{
 position:fixed;
 bottom:25px;
-left:25px;
+right:25px;
 background:#25D366;
 color:white;
-padding:15px;
+padding:16px;
 border-radius:50%;
 font-size:22px;
 text-decoration:none;
+box-shadow:0 0 15px #25D366;
 }
 
-/* ===== COUNTER ===== */
-.counter{
-font-size:40px;
-font-weight:bold;
+/* ===== POPUP ===== */
+.popup{
+position:fixed;
+bottom:20px;
+left:20px;
+background:white;
+padding:20px;
+border-radius:12px;
+display:none;
+box-shadow:0 0 20px rgba(0,0,0,.3);
 }
 
 /* ===== FOOTER ===== */
 footer{
+background:#4b2c63;
+color:white;
 text-align:center;
-padding:25px;
+padding:20px;
 margin-top:40px;
+}
+
+iframe{
+width:100%;
+height:300px;
+border:0;
+border-radius:12px;
 }
 
 </style>
 
 <script>
 
-/* ===== AUTO LEAD POPUP ===== */
+/* AUTO LEAD POPUP */
 window.onload=()=>{
 setTimeout(()=>{
 document.getElementById("lead").style.display="block";
 },5000);
 }
 
-/* ===== WHATSAPP AI ===== */
+/* WHATSAPP AI ENQUIRY */
 function sendAI(){
+
 let n=name.value;
 let p=phone.value;
 let c=course.value;
 
 let msg=
 "Hello Hazel Projects 👋%0A"+
-"My Name: "+n+"%0A"+
+"Student Name: "+n+"%0A"+
 "Phone: "+p+"%0A"+
-"Interested In: "+c+"%0A"+
-"Please send details, price & available projects.";
+"Project Type: "+c+"%0A"+
+"Please send project details.";
 
-window.open("https://wa.me/919791871615?text="+msg);
-}
-
-/* ===== AUTO FOLLOW UP ===== */
-function followup(){
-setTimeout(()=>{
 window.open(
-"https://wa.me/919791871615?text=Reminder: Student visited website enquiry",
-"_blank");
-},15000);
+"https://wa.me/919791871615?text="+msg
+);
 }
 
 </script>
@@ -200,71 +204,68 @@ window.open(
 </div>
 </nav>
 
+<!-- HEADER -->
 <header>
-<h1>Hazel Projects</h1>
-<p>Chennai's Smart Project Centre</p>
+<img src="logo.png" alt="Hazel Projects Logo">
 </header>
 
-<!-- COUNTERS -->
+<!-- QUOTE SECTION -->
 <section class="section">
-<div class="grid">
-<div class="card"><div class="counter">500+</div>Projects</div>
-<div class="card"><div class="counter">1200+</div>Students</div>
-<div class="card"><div class="counter">5+</div>Years Experience</div>
+<div class="quote">
+"Turning Student Ideas Into Real Innovation 🚀  
+Build • Learn • Innovate with Hazel Projects"
 </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="section">
-<h2>Our Services</h2>
+<h2>Our Project Services</h2>
+
 <div class="grid">
 <div class="card">School Projects</div>
-<div class="card">Arduino / ESP32</div>
+<div class="card">Arduino & ESP32</div>
 <div class="card">IoT Projects</div>
-<div class="card">AI / ML</div>
-<div class="card">Mechanical</div>
-<div class="card">ECE</div>
+<div class="card">AI / ML Projects</div>
+<div class="card">Mechanical Projects</div>
+<div class="card">ECE Projects</div>
 <div class="card">3D Printing</div>
 </div>
+
 </section>
 
-<!-- STUDENT AUTOMATION ENQUIRY -->
+<!-- STUDENT ENQUIRY -->
 <section id="enquiry" class="section">
-<h2>Student Enquiry Automation</h2>
+
+<h2>Student Enquiry</h2>
 
 <input id="name" placeholder="Student Name">
 <input id="phone" placeholder="Mobile Number">
 
 <select id="course">
 <option>School Project</option>
-<option>Arduino</option>
+<option>Arduino Project</option>
 <option>Mini Project</option>
 <option>Final Year Project</option>
 <option>3D Printing</option>
 </select>
 
-<button class="btn"
-onclick="sendAI();followup();">
-Send Smart Enquiry
+<button class="btn" onclick="sendAI()">
+Send Enquiry
 </button>
 
 </section>
 
-<!-- GOOGLE MAP -->
+<!-- MAP -->
 <section class="section">
-<h2>Visit Us</h2>
-<iframe
-src="https://maps.google.com/maps?q=Ayapakkam%20Chennai&output=embed"
-width="100%" height="300"
-style="border:0;border-radius:12px">
-</iframe>
+<h2>Visit Our Centre</h2>
+<iframe src="https://maps.google.com/maps?q=Ayapakkam%20Chennai&output=embed"></iframe>
 </section>
 
 <footer>
-© 2026 Hazel Projects Chennai
+© 2026 Hazel Projects | Chennai
 </footer>
 
-<!-- AUTO LEAD POPUP -->
+<!-- AUTO LEAD -->
 <div id="lead" class="popup">
 Need Final Year Project Help?<br><br>
 <button class="btn"
@@ -273,7 +274,6 @@ Chat Now
 </button>
 </div>
 
-<!-- WHATSAPP -->
 <a class="whatsapp"
 href="https://wa.me/919791871615?text=Hello Hazel Projects">
 💬
