@@ -1,266 +1,277 @@
 <!doctype html>
 <html lang="en">
 <head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>Hazel Projects | Project Centre Near Me | Chennai</title>
 
-<meta name="description" content="Hazel Projects is a project centre near me located in Ayapakkam Chennai providing school projects, Arduino UNO, ESP32, IoT, AI, mechanical, ECE, 3D printing and final year engineering projects.">
+<meta name="description"
+content="Hazel Projects Chennai provides Arduino, ESP32, IoT, AI, Mechanical, ECE, School and Final Year Engineering Projects.">
 
-<meta name="keywords" content="
-project centre ayapakkam, project centre chennai,
-project centre avadi, ambattur, anna nagar, mogappair, porur,
-project centre tamil nadu,
-school project centre near me,
-arduino project centre near me,
-esp32 project centre near me,
-iot project centre near me,
-ai ml project centre near me,
-mechanical project centre near me,
-ece project centre near me,
-3d printing services near me
-">
+<meta name="robots" content="index,follow">
 
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.hazelprojects.in/">
-
-<script type="application/ld+json">
-{
- "@context":"https://schema.org",
- "@type":"LocalBusiness",
- "name":"Hazel Projects",
- "description":"Project centre providing school, Arduino UNO, ESP32, IoT, AI, mechanical, ECE, 3D printing and final year engineering projects.",
- "telephone":"+919791871615",
- "address":{
-   "@type":"PostalAddress",
-   "streetAddress":"Ayapakkam",
-   "addressLocality":"Chennai",
-   "addressRegion":"Tamil Nadu",
-   "addressCountry":"IN"
- },
- "priceRange":"₹999 - ₹9999"
-}
-</script>
+<!-- GEO SEO -->
+<meta name="geo.region" content="IN-TN">
+<meta name="geo.placename" content="Chennai">
+<meta name="geo.position" content="13.1143;80.1548">
 
 <style>
-body{margin:0;font-family:Arial;background:#050b1e;color:#fff}
-header{text-align:center;padding:60px}
-h1{color:#00eaff}
-.section{max-width:1200px;margin:40px auto;padding:30px;background:rgba(255,255,255,.08);border-radius:16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:rgba(255,255,255,.12);padding:20px;border-radius:14px;text-align:center;cursor:pointer}
-.card:hover{box-shadow:0 0 18px #00eaff}
-.price{font-size:26px;font-weight:bold}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);justify-content:center;align-items:center}
-.modal-content{background:#0b132f;padding:20px;border-radius:14px;max-height:85vh;overflow:auto;width:90%}
-.topic{display:flex;justify-content:space-between;align-items:center;margin:6px 0}
-.btn{background:#00eaff;border:none;padding:8px 14px;border-radius:8px;font-weight:bold;cursor:pointer}
-input,select{width:100%;padding:12px;margin:10px 0;border-radius:8px;border:none}
-.close{float:right;cursor:pointer}
+
+body{
+margin:0;
+font-family:Arial;
+background:#050505;
+color:white;
+}
+
+/* LOADER */
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+/* NAVBAR */
+nav{
+position:sticky;
+top:0;
+background:black;
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+box-shadow:0 0 10px white;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+/* HEADER */
+header{
+text-align:center;
+padding:90px;
+}
+
+.section{
+max-width:1100px;
+margin:auto;
+padding:30px;
+background:#111;
+border-radius:14px;
+margin-top:40px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1b1b1b;
+padding:20px;
+border-radius:12px;
+text-align:center;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 0 18px white;
+}
+
+.btn{
+background:white;
+color:black;
+border:none;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+padding:15px;
+border-radius:50%;
+font-size:22px;
+color:white;
+text-decoration:none;
+}
+
+/* POPUPS */
+.popup{
+position:fixed;
+bottom:20px;
+left:20px;
+background:#111;
+padding:20px;
+border-radius:12px;
+display:none;
+box-shadow:0 0 15px white;
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin:8px 0;
+border-radius:8px;
+border:none;
+}
+
+iframe{
+width:100%;
+height:300px;
+border:0;
+border-radius:10px;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:black;
+margin-top:40px;
+}
+
 </style>
 
 <script>
-function openModal(id){document.getElementById(id).style.display="flex";}
-function closeModal(id){document.getElementById(id).style.display="none";}
-function orderTopic(t){
- window.open("https://wa.me/919791871615?text="+encodeURIComponent("I want this project: "+t),"_blank");
+
+/* LOADER */
+window.onload=function(){
+document.getElementById("loader").style.display="none";
+setTimeout(()=>{document.getElementById("leadPopup").style.display="block"},6000);
 }
-function loadTopics(id,title,arr){
- let html=`<span class="close" onclick="closeModal('${id}')">✖</span><h3>${title} – 30 Topics</h3>`;
- arr.forEach(t=>{
-  html+=`<div class="topic">${t}<button class="btn" onclick="orderTopic('${t}')">Order</button></div>`;
- });
- document.getElementById(id).querySelector(".modal-content").innerHTML=html;
+
+/* WHATSAPP AI AUTO MESSAGE */
+function sendEnquiry(){
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let course=document.getElementById("course").value;
+
+let msg=
+"Hello Hazel Projects,%0A"+
+"I am interested in project.%0A"+
+"Name:"+name+"%0A"+
+"Phone:"+phone+"%0A"+
+"Category:"+course+"%0A"+
+"Please guide me.";
+
+window.open("https://wa.me/919791871615?text="+msg);
 }
-function sendWA(msg){
- window.open("https://wa.me/919791871615?text="+encodeURIComponent(msg),"_blank");
+
+/* REVIEW CLOSE */
+function closeReview(){
+document.getElementById("reviewPopup").style.display="none";
 }
+
 </script>
+
 </head>
 
 <body>
 
+<div id="loader"><h2>Hazel Projects Loading...</h2></div>
+
+<nav>
+<h2>Hazel Projects</h2>
+<div>
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#enquiry">Enquiry</a>
+</div>
+</nav>
+
 <header>
 <h1>Hazel Projects</h1>
-<p>School • Arduino • ESP32 • IoT • AI • Mechanical • ECE • 3D Printing</p>
+<p>Chennai Trusted Project Centre</p>
 </header>
 
 <!-- SERVICES -->
-<section class="section">
+<section id="services" class="section">
+<h2>Our Services</h2>
 <div class="grid">
- <div class="card" onclick="openModal('school')">🏫 School Projects</div>
- <div class="card" onclick="openModal('arduino')">🔌 Arduino & ESP32</div>
- <div class="card" onclick="openModal('iot')">🌐 IoT Projects</div>
- <div class="card" onclick="openModal('ai')">🤖 AI / ML Projects</div>
- <div class="card" onclick="openModal('mech')">⚙️ Mechanical Projects</div>
- <div class="card" onclick="openModal('ece')">📘 ECE Projects</div>
- <div class="card" onclick="openModal('print3d')">🖨️ 3D Printing</div>
+<div class="card">School Projects</div>
+<div class="card">Arduino / ESP32</div>
+<div class="card">IoT Projects</div>
+<div class="card">AI / ML</div>
+<div class="card">Mechanical</div>
+<div class="card">ECE</div>
 </div>
 </section>
 
-<!-- PRICING -->
-<section class="section">
-<h2>Project Pricing</h2>
-<div class="grid">
- <div class="card"><h3>School Projects</h3><div class="price">₹999</div></div>
- <div class="card"><h3>Arduino & ESP32 Basics</h3><div class="price">₹1599</div></div>
- <div class="card"><h3>Mini Projects</h3><div class="price">₹2999</div></div>
- <div class="card"><h3>Final Year Projects</h3><div class="price">₹9999</div></div>
-</div>
-</section>
+<!-- STUDENT ENQUIRY -->
+<section id="enquiry" class="section">
+<h2>Student Enquiry</h2>
 
-<!-- PROJECT INTEREST FORM -->
-<section class="section">
-<h2>Project Interest Form</h2>
-<form onsubmit="sendWA(
-'Project Interest\nName: '+pname.value+
-'\nPhone: '+pphone.value+
-'\nCategory: '+pcat.value);return false;">
-<input id="pname" placeholder="Your Name" required>
-<input id="pphone" placeholder="Mobile Number" required>
-<select id="pcat">
+<input id="name" placeholder="Student Name">
+<input id="phone" placeholder="Mobile Number">
+
+<select id="course">
 <option>School Project</option>
-<option>Arduino / ESP32 Basics</option>
+<option>Arduino</option>
 <option>Mini Project</option>
 <option>Final Year Project</option>
 <option>3D Printing</option>
 </select>
-<button class="btn">Send to WhatsApp</button>
-</form>
+
+<button class="btn" onclick="sendEnquiry()">Send WhatsApp Enquiry</button>
 </section>
 
-<!-- CAREER -->
+<!-- MAP -->
 <section class="section">
-<h2>Career – Students & Part-Time Workers</h2>
-<form onsubmit="sendWA(
-'Career Application\nName: '+cname.value+
-'\nPhone: '+cphone.value+
-'\nInterest: '+crole.value);return false;">
-<input id="cname" placeholder="Your Name" required>
-<input id="cphone" placeholder="Mobile Number" required>
-<select id="crole">
-<option>Student – Project Training</option>
-<option>Final Year Internship</option>
-<option>Part-Time Project Support</option>
-<option>Embedded / IoT Trainer</option>
-<option>3D Printing Operator</option>
-</select>
-<button class="btn">Apply via WhatsApp</button>
-</form>
+<h2>Our Location</h2>
+<iframe src="https://maps.google.com/maps?q=Ayapakkam%20Chennai&output=embed"></iframe>
 </section>
 
-<!-- MODALS -->
-<div class="modal" id="school"><div class="modal-content"></div></div>
-<div class="modal" id="arduino"><div class="modal-content"></div></div>
-<div class="modal" id="iot"><div class="modal-content"></div></div>
-<div class="modal" id="ai"><div class="modal-content"></div></div>
-<div class="modal" id="mech"><div class="modal-content"></div></div>
-<div class="modal" id="ece"><div class="modal-content"></div></div>
+<!-- HIDDEN SEO -->
+<section style="display:none">
+Project Centre Chennai,
+Project Centre Ayapakkam,
+Engineering Project Centre Ambattur,
+Final Year Project Centre Avadi,
+Arduino Project Centre Near Me.
+</section>
 
-<!-- 3D PRINTING -->
-<div class="modal" id="print3d">
-<div class="modal-content">
-<span class="close" onclick="closeModal('print3d')">✖</span>
-<h3>3D Printing Services</h3>
-<ul>
-<li>PLA / ABS Printing</li>
-<li>Mechanical & ECE Parts</li>
-<li>Robotics Prototypes</li>
-<li>Architectural Models</li>
-<li>Custom Project Parts</li>
-</ul>
-<button class="btn" onclick="sendWA('I need 3D Printing service')">Order via WhatsApp</button>
+<footer>
+© Hazel Projects Chennai
+</footer>
+
+<!-- GOOGLE REVIEW POPUP -->
+<div id="reviewPopup" class="popup" style="display:block">
+⭐ Customers rated us 4.9/5<br><br>
+<button class="btn"
+onclick="window.open('https://google.com')">
+Give Google Review
+</button>
+<button class="btn" onclick="closeReview()">Close</button>
 </div>
+
+<!-- LEAD POPUP -->
+<div id="leadPopup" class="popup">
+Need Project Help?<br><br>
+<button class="btn"
+onclick="window.open('https://wa.me/919791871615?text=I need project details')">
+Chat Now
+</button>
 </div>
 
-<script>
-loadTopics("school","School",[
-"Smart Dustbin","Automatic Street Light","Rain Alarm","Fire Alarm","Water Level Indicator",
-"Smart Irrigation","Traffic Light System","RFID Attendance","Smart Door Lock","Gas Leakage Detector",
-"Line Follower Robot","Obstacle Avoider Robot","Weather Station","Smart Parking",
-"Automatic Hand Sanitizer","Home Security Alarm","Soil Moisture Indicator","Smart Bell",
-"Solar Tracker","Voice Controlled Light","Flood Alert System","Fire Fighting Robot",
-"Automatic Plant Watering","Smart Blind Stick","Digital Notice Board",
-"Smart Helmet","Automatic Gate Control","Smart Energy Saver","Smart Classroom","Solar Fan"
-]);
-
-loadTopics("arduino","Arduino / ESP32",[
-"ESP32 Home Automation","Bluetooth Controlled Robot","WiFi Relay Control","Smart Energy Meter",
-"Accident Alert System","GPS Vehicle Tracking","Smart Trolley","Fingerprint Door Lock",
-"Voice Controlled Home","IoT Weather Station","Smart Irrigation System","RFID Access Control",
-"ESP32 Web Server","Smart Parking System","Water Quality Monitoring",
-"Smart Street Light","Solar Monitoring System","ESP32 Camera Security",
-"Smart Attendance System","Home Automation with Alexa",
-"ESP32 Data Logger","IoT Notice Board","Smart Alarm System",
-"ESP32 Bluetooth Control","Automatic Door System","Smart Fan Controller",
-"ESP32 Sensor Hub","Smart Power Monitor","IoT Smart Meter","ESP32 Dashboard"
-]);
-
-loadTopics("iot","IoT",[
-"Smart City Monitoring","IoT Weather Station","Smart Agriculture",
-"Industrial IoT Monitoring","Water Quality Monitoring","Air Quality Monitoring",
-"Smart Energy Meter","IoT Smart Parking","Remote Health Monitoring",
-"Smart Grid Monitoring","Asset Tracking System","IoT Home Automation",
-"Smart Waste Management","IoT Fire Detection","Smart Irrigation",
-"Cold Storage Monitoring","Smart Warehouse","IoT Traffic Monitoring",
-"Smart Water Meter","IoT Flood Alert","Smart Street Light",
-"Smart Building Automation","IoT Gas Monitoring","Smart Power Grid",
-"IoT Attendance System","Smart Solar Monitoring","IoT Pollution Monitoring",
-"IoT Security System","Smart Factory","IoT Smart Campus"
-]);
-
-loadTopics("ai","AI / ML",[
-"Face Recognition System","Voice Assistant","Chatbot using NLP",
-"Accident Detection using AI","Emotion Detection",
-"Spam Email Detection","Traffic Prediction",
-"Image Classification","AI Recommendation System",
-"Handwritten Digit Recognition","Face Mask Detection",
-"Smart Attendance using Face Recognition","AI Surveillance",
-"Speech to Text System","Text Summarization",
-"Fake News Detection","Disease Prediction",
-"Stock Price Prediction","Weather Prediction",
-"Object Detection","Resume Screening",
-"Sentiment Analysis","AI Exam Proctoring",
-"Voice Command Recognition","Image Segmentation",
-"AI Chatbot for College","AI Traffic Control",
-"AI Smart Home","AI Energy Optimization"
-]);
-
-loadTopics("mech","Mechanical",[
-"Solar Grass Cutter","Pneumatic Bumper","Automatic Braking System",
-"Hydraulic Lift","Regenerative Braking",
-"Wind Power Model","Robotic Arm","Conveyor Belt System",
-"EV Chassis Design","Smart Manufacturing",
-"Hydraulic Press","Automatic Car Washer",
-"Solar Water Heater","Gear Box Mechanism",
-"Material Handling System","Pneumatic Jack",
-"Air Compressor Model","Solar Dryer",
-"Automatic Bottle Filling","Speed Breaker Generator",
-"Seed Sowing Machine","Wind Turbine Model",
-"Automatic Lubrication","Chain Drive Mechanism",
-"Hydraulic Crane","Solar Vehicle",
-"Shock Absorber","Automated Parking",
-"Flywheel Energy Storage","Power Transmission System"
-]);
-
-loadTopics("ece","ECE",[
-"Smart Energy Meter","RF Communication","5G Antenna Model",
-"Embedded Security","Wireless Power Transfer",
-"Biomedical Monitoring","IoT Sensor Network",
-"Smart Grid","Image Processing",
-"DSP Application","Smart Traffic Control",
-"Smart Street Light","Digital Communication",
-"ECG Monitoring","Smart Home Automation",
-"Wireless Sensor Network","Embedded Voting",
-"Smart Alarm","IoT Fire Detection",
-"Smart Water Meter","Smart Parking",
-"RFID Access Control","Smart Power Monitoring",
-"Wireless Notice Board","Signal Processing",
-"Smart Surveillance","Embedded Health Monitor",
-"Energy Saver","IoT Gas Detection","Smart Meter Reading"
-]);
-</script>
+<a class="whatsapp"
+href="https://wa.me/919791871615?text=Hello Hazel Projects">
+💬</a>
 
 </body>
 </html>
