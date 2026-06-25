@@ -1,247 +1,509 @@
 <!doctype html>
 <html lang="en">
 <head>
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hazel Projects | Funky Project Centre Chennai</title>
+<meta name="description" content="Hazel Projects Chennai provides Arduino, ESP32, IoT, AI, Mechanical, ECE and Final Year Engineering Projects with a funky twist.">
 
-<title>Hazel Projects | Project Centre Chennai</title>
-
-<meta name="description"
-content="Hazel Projects Chennai provides Arduino, ESP32, IoT, AI, Mechanical, ECE and Final Year Engineering Projects.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-
-/* BODY */
+:root{
+  --orange:#FF5A00;
+  --orange-dark:#E14D00;
+  --orange-light:#FF8A3D;
+  --purple:#4B2C63;
+  --yellow:#FFC700;
+  --bg:#FFF4EC;
+  --card:#FFFFFF;
+  --text:#1A0B00;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+html{scroll-behavior:smooth;}
 body{
-margin:0;
-font-family:Poppins;
-background:#ff7a00;
-background-image:
-radial-gradient(rgba(0,0,0,.05) 1px, transparent 1px);
-background-size:6px 6px;
+  font-family:'Outfit', sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
 }
-
-/* NAVBAR */
+body::before{
+  content:'';
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: 
+    radial-gradient(circle at 20% 20%, var(--orange-light) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, var(--yellow) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, var(--orange) 0%, transparent 40%);
+  opacity:0.15;
+  z-index:-1;
+  animation:bgMove 20s ease-in-out infinite alternate;
+}
+@keyframes bgMove{
+  0%{transform:scale(1) rotate(0deg)}
+  100%{transform:scale(1.2) rotate(10deg)}
+}
 nav{
-background:#4b2c63;
-color:white;
-display:flex;
-justify-content:space-between;
-padding:15px 40px;
+  position:sticky;
+  top:0;
+  background:rgba(255,90,0,0.8);
+  backdrop-filter:blur(12px);
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 5%;
+  z-index:1000;
+  border-bottom:2px solid rgba(255,255,255,0.2);
+  animation:slideDown 0.6s ease;
 }
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
+@keyframes slideDown{
+  from{transform:translateY(-100%)}
+  to{transform:translateY(0)}
 }
-
-/* HEADER */
+nav h2{
+  font-family:'Space Grotesk', sans-serif;
+  font-weight:900;
+  font-size:28px;
+  letter-spacing:-1px;
+  transform:skew(-5deg);
+  text-shadow:3px 3px 0 var(--purple);
+  cursor:pointer;
+  transition:.3s;
+}
+nav h2:hover{
+  transform:skew(-5deg) scale(1.05) rotate(-2deg);
+}
+nav div a{
+  color:white;
+  text-decoration:none;
+  margin-left:28px;
+  font-weight:500;
+  position:relative;
+  transition:.3s;
+}
+nav div a::after{
+  content:'';
+  position:absolute;
+  bottom:-5px; left:0;
+  width:0; height:3px;
+  background:var(--yellow);
+  transition:.3s cubic-bezier(.68,-0.55,.265,1.55);
+}
+nav div a:hover::after{width:100%;}
+nav div a:hover{transform:translateY(-2px);}
 header{
-text-align:center;
-padding:60px 20px;
-color:white;
+  text-align:center;
+  padding:100px 20px 80px;
+  position:relative;
 }
-
 header h1{
-font-size:48px;
+  font-family:'Space Grotesk', sans-serif;
+  font-size:clamp(48px, 8vw, 90px);
+  font-weight:900;
+  color:var(--orange);
+  text-shadow:6px 6px 0 var(--purple), 12px 12px 0 rgba(255,199,0,0.5);
+  animation:popIn 0.8s cubic-bezier(.68,-0.55,.265,1.55);
+  transform:skew(-3deg);
 }
-
-/* SECTION */
+@keyframes popIn{
+  0%{transform:scale(0) skew(-3deg); opacity:0}
+  100%{transform:scale(1) skew(-3deg); opacity:1}
+}
+header p{
+  font-size:22px;
+  margin-top:20px;
+  color:var(--purple);
+  font-weight:500;
+  animation:fadeUp 1s .3s both;
+}
+@keyframes fadeUp{
+  from{transform:translateY(30px); opacity:0}
+  to{transform:translateY(0); opacity:1}
+}
+.floating-emoji{
+  position:absolute;
+  font-size:40px;
+  animation:float 3s ease-in-out infinite;
+  opacity:0.7;
+}
+.floating-emoji:nth-child(1){top:20%; left:10%; animation-delay:0s}
+.floating-emoji:nth-child(2){top:60%; right:15%; animation-delay:1s}
+.floating-emoji:nth-child(3){top:30%; right:25%; animation-delay:2s}
+@keyframes float{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-20px) rotate(10deg)}
+}
 .section{
-max-width:1150px;
-margin:40px auto;
-padding:35px;
-background:white;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
+  max-width:1200px;
+  margin:60px auto;
+  padding:50px 5%;
+  background:var(--card);
+  border-radius:32px;
+  border:4px solid var(--orange);
+  box-shadow:12px 12px 0 var(--purple);
+  position:relative;
+  transform:rotate(-0.5deg);
+  transition:.4s;
+  animation:sectionIn 0.6s ease-out;
 }
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:25px;
+@keyframes sectionIn{
+  from{transform:rotate(-0.5deg) translateY(50px); opacity:0}
+  to{transform:rotate(-0.5deg) translateY(0); opacity:1}
 }
-
-/* CARD */
-.card{
-background:#fff7ef;
-padding:25px;
-border-radius:14px;
-text-align:center;
-border:2px solid #ffe0c2;
-transition:.4s;
+.section:hover{
+  transform:rotate(0deg) translateY(-5px);
+  box-shadow:16px 16px 0 var(--purple);
 }
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 10px 25px rgba(0,0,0,.25);
+.section h2{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:42px;
+  font-weight:900;
+  color:var(--orange);
+  margin-bottom:30px;
+  position:relative;
+  display:inline-block;
 }
-
-/* BUTTON */
-.btn{
-background:#4b2c63;
-color:white;
-padding:12px 18px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-font-weight:bold;
+.section h2::after{
+  content:'';
+  position:absolute;
+  bottom:-8px; left:0;
+  width:60%; height:6px;
+  background:var(--yellow);
+  transform:skew(-20deg);
 }
-
-/* INPUT */
-input,select{
-width:100%;
-padding:14px;
-margin:10px 0;
-border-radius:10px;
-border:1px solid #ccc;
-}
-
-/* QUOTE */
 .quote{
-text-align:center;
-font-size:24px;
-color:#4b2c63;
-font-weight:600;
+  text-align:center;
+  font-size:28px;
+  color:var(--purple);
+  font-weight:700;
+  font-family:'Space Grotesk', sans-serif;
+  padding:20px;
+  border:3px dashed var(--orange);
+  border-radius:20px;
+  background:linear-gradient(135deg, #FFF4EC, #FFE5D4);
+  animation:pulse 2s ease-in-out infinite;
 }
-
-/* WHATSAPP */
+@keyframes pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.02)}
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
+  margin-top:20px;
+}
+.card{
+  background:linear-gradient(135deg, #FFF 0%, #FFF4EC 100%);
+  padding:35px 25px;
+  border-radius:24px;
+  text-align:center;
+  border:3px solid var(--orange);
+  box-shadow:8px 8px 0 var(--orange-dark);
+  transition:.3s cubic-bezier(.68,-0.55,.265,1.55);
+  cursor:pointer;
+  font-weight:700;
+  font-size:18px;
+  position:relative;
+  overflow:hidden;
+}
+.card::before{
+  content:'';
+  position:absolute;
+  top:-50%; left:-50%;
+  width:200%; height:200%;
+  background:radial-gradient(circle, var(--yellow) 0%, transparent 70%);
+  opacity:0;
+  transition:.5s;
+  transform:scale(0);
+}
+.card:hover::before{
+  opacity:0.2;
+  transform:scale(1);
+}
+.card:hover{
+  transform:translateY(-12px) rotate(-2deg);
+  box-shadow:12px 16px 0 var(--purple);
+}
+.card:active{
+  transform:translateY(-4px) rotate(0deg) scale(0.98);
+  box-shadow:4px 6px 0 var(--purple);
+}
+.btn{
+  background:var(--orange);
+  color:white;
+  padding:16px 32px;
+  border:none;
+  border-radius:16px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:18px;
+  font-family:'Outfit', sans-serif;
+  border:3px solid var(--purple);
+  box-shadow:6px 6px 0 var(--purple);
+  transition:.2s cubic-bezier(.68,-0.55,.265,1.55);
+  position:relative;
+  overflow:hidden;
+}
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:10px 10px 0 var(--purple);
+  background:var(--orange-dark);
+}
+.btn:active{
+  transform:translateY(2px);
+  box-shadow:2px 2px 0 var(--purple);
+}
+.btn::after{
+  content:'';
+  position:absolute;
+  top:50%; left:50%;
+  width:0; height:0;
+  border-radius:50%;
+  background:rgba(255,255,255,0.5);
+  transform:translate(-50%,-50%);
+  transition:width .6s, height .6s;
+}
+.btn:active::after{
+  width:300px;
+  height:300px;
+  opacity:0;
+}
+input,select{
+  width:100%;
+  padding:18px 20px;
+  margin:12px 0;
+  border-radius:16px;
+  border:3px solid var(--orange);
+  background:#FFFBF8;
+  font-size:16px;
+  font-family:'Outfit', sans-serif;
+  font-weight:500;
+  transition:.3s;
+  box-shadow:4px 4px 0 rgba(255,90,0,0.2);
+}
+input:focus,select:focus{
+  outline:none;
+  border-color:var(--purple);
+  box-shadow:6px 6px 0 var(--yellow);
+  transform:translateY(-2px);
+}
 .whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-color:white;
-padding:16px;
-border-radius:50%;
-font-size:22px;
-text-decoration:none;
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  background:#25D366;
+  color:white;
+  padding:20px;
+  border-radius:50%;
+  font-size:28px;
+  text-decoration:none;
+  border:4px solid white;
+  box-shadow:8px 8px 0 rgba(0,0,0,0.2);
+  z-index:1000;
+  animation:bounce 2s ease-in-out infinite;
+  transition:.3s;
 }
-
-/* POPUP */
+@keyframes bounce{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-10px) scale(1.05)}
+}
+.whatsapp:hover{
+  transform:scale(1.15) rotate(15deg);
+  animation:none;
+}
 .popup{
-position:fixed;
-bottom:20px;
-left:20px;
-background:white;
-padding:20px;
-border-radius:12px;
-display:none;
-box-shadow:0 0 20px rgba(0,0,0,.3);
+  position:fixed;
+  bottom:30px;
+  left:30px;
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  display:none;
+  border:4px solid var(--orange);
+  box-shadow:10px 10px 0 var(--purple);
+  z-index:1000;
+  max-width:280px;
+  animation:slideInLeft 0.5s cubic-bezier(.68,-0.55,.265,1.55);
 }
-
+@keyframes slideInLeft{
+  from{transform:translateX(-400px)}
+  to{transform:translateX(0)}
+}
+.close-popup{
+  position:absolute;
+  top:8px; right:12px;
+  background:none;
+  border:none;
+  font-size:24px;
+  cursor:pointer;
+  color:var(--orange);
+  font-weight:900;
+}
 footer{
-background:#4b2c63;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:40px;
+  background:var(--purple);
+  color:white;
+  text-align:center;
+  padding:30px;
+  margin-top:60px;
+  font-weight:500;
+  border-top:6px solid var(--orange);
 }
-
 iframe{
-width:100%;
-height:300px;
-border:0;
-border-radius:12px;
+  width:100%;
+  height:350px;
+  border:0;
+  border-radius:20px;
+  border:4px solid var(--orange);
+  box-shadow:8px 8px 0 var(--yellow);
 }
-
+.ripple{
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,90,0,0.6);
+  transform:scale(0);
+  animation:rippleEffect 0.6s linear;
+  pointer-events:none;
+}
+@keyframes rippleEffect{
+  to{transform:scale(4); opacity:0}
+}
+@media(max-width:768px){
+  nav{padding:16px 20px}
+  nav div a{margin-left:16px; font-size:14px}
+  .section{margin:40px 20px; padding:35px 25px}
+  header h1{font-size:52px}
+  .quote{font-size:22px}
+}
 </style>
 
 <script>
-
-/* AUTO LEAD */
 window.onload=()=>{
-setTimeout(()=>{
-document.getElementById("lead").style.display="block";
-},5000);
+  setTimeout(()=>{
+    document.getElementById("lead").style.display="block";
+  },5000);
+  
+  document.querySelectorAll('.btn, .card').forEach(el=>{
+    el.addEventListener('click', createRipple);
+  });
 }
 
-/* STUDENT ENQUIRY */
+function createRipple(e){
+  const button = e.currentTarget;
+  const circle = document.createElement('span');
+  const diameter = Math.max(button.clientWidth, button.clientHeight);
+  const radius = diameter / 2;
+  
+  circle.style.width = circle.style.height = `${diameter}px`;
+  circle.style.left = `${e.clientX - button.offsetLeft - radius}px`;
+  circle.style.top = `${e.clientY - button.offsetTop - radius}px`;
+  circle.classList.add('ripple');
+  
+  const ripple = button.getElementsByClassName('ripple')[0];
+  if(ripple) ripple.remove();
+  
+  button.appendChild(circle);
+}
+
+function closePopup(){
+  document.getElementById("lead").style.display="none";
+}
+
 function sendEnquiry(){
-let n=name.value;
-let p=phone.value;
-let c=course.value;
-
-let msg=
-"Student Enquiry%0A"+
-"Name:"+n+"%0A"+
-"Phone:"+p+"%0A"+
-"Project:"+c;
-
-window.open("https://wa.me/919791871615?text="+msg);
+  let n = document.getElementById('name').value.trim();
+  let p = document.getElementById('phone').value.trim();
+  let c = document.getElementById('course').value;
+  
+  if(!n || !p){
+    alert("Hey! Fill your name and mobile number first 🚀");
+    return;
+  }
+  
+  let msg = `*Student Enquiry* 🔥%0AName: ${n}%0APhone: ${p}%0AProject: ${c}`;
+  window.open("https://wa.me/919791871615?text=" + msg);
 }
 
-/* CAREER APPLY */
 function careerApply(){
-
-let n=cname.value;
-let p=cphone.value;
-let r=crole.value;
-
-let msg=
-"Career Application%0A"+
-"Name:"+n+"%0A"+
-"Phone:"+p+"%0A"+
-"Role:"+r;
-
-window.open("https://wa.me/919791871615?text="+msg);
+  let n = document.getElementById('cname').value.trim();
+  let p = document.getElementById('cphone').value.trim();
+  let r = document.getElementById('crole').value;
+  
+  if(!n || !p){
+    alert("Please enter name and mobile number 💼");
+    return;
+  }
+  
+  let msg = `*Career Application* 💡%0AName: ${n}%0APhone: ${p}%0ARole: ${r}`;
+  window.open("https://wa.me/919791871615?text=" + msg);
 }
 
+document.addEventListener('DOMContentLoaded', ()=>{
+  document.querySelector('nav h2').onclick = ()=>{
+    document.body.style.animation = 'shake 0.5s';
+    setTimeout(()=>{document.body.style.animation = ''}, 500);
+  }
+});
 </script>
-
+<style>
+@keyframes shake{
+  0%,100%{transform:translateX(0)}
+  25%{transform:translateX(-10px) rotate(-1deg)}
+  75%{transform:translateX(10px) rotate(1deg)}
+}
+</style>
 </head>
 
 <body>
 
 <nav>
-<h2>Hazel Projects</h2>
+<h2>HAZEL PROJECTS</h2>
 <div>
 <a href="#">Home</a>
 <a href="#services">Services</a>
 <a href="#career">Career</a>
+<a href="#contact">Contact</a>
 </div>
 </nav>
 
 <header>
-<h1>Hazel Projects</h1>
-<p>Turning Ideas Into Innovation 🚀</p>
+<span class="floating-emoji">⚡</span>
+<span class="floating-emoji">🚀</span>
+<span class="floating-emoji">💡</span>
+<h1>HAZEL PROJECTS</h1>
+<p>Turning Ideas Into Innovation 🔥</p>
 </header>
 
-<!-- QUOTE -->
 <section class="section">
 <div class="quote">
-"Build Skills • Create Innovation • Shape Your Future with Hazel Projects"
+"Build Skills • Create Innovation • Shape Your Future with Hazel Projects" ✨
 </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services" class="section">
 <h2>Our Services</h2>
-
 <div class="grid">
-<div class="card">School Projects</div>
-<div class="card">Arduino & ESP32</div>
-<div class="card">IoT Projects</div>
-<div class="card">AI / ML</div>
-<div class="card">Mechanical</div>
-<div class="card">ECE</div>
-<div class="card">3D Printing</div>
+<div class="card"><i class="fa-solid fa-school"></i><br>School Projects</div>
+<div class="card"><i class="fa-solid fa-microchip"></i><br>Arduino & ESP32</div>
+<div class="card"><i class="fa-solid fa-wifi"></i><br>IoT Projects</div>
+<div class="card"><i class="fa-solid fa-robot"></i><br>AI / ML</div>
+<div class="card"><i class="fa-solid fa-gear"></i><br>Mechanical</div>
+<div class="card"><i class="fa-solid fa-tower-broadcast"></i><br>ECE</div>
+<div class="card"><i class="fa-solid fa-cube"></i><br>3D Printing</div>
 </div>
-
 </section>
 
-<!-- STUDENT ENQUIRY -->
 <section class="section">
-<h2>Project Enquiry</h2>
-
+<h2>Project Enquiry 🎯</h2>
 <input id="name" placeholder="Student Name">
-<input id="phone" placeholder="Mobile Number">
-
+<input id="phone" placeholder="Mobile Number" type="tel">
 <select id="course">
 <option>School Project</option>
 <option>Arduino Project</option>
@@ -249,54 +511,41 @@ window.open("https://wa.me/919791871615?text="+msg);
 <option>Final Year Project</option>
 <option>3D Printing</option>
 </select>
-
-<button class="btn" onclick="sendEnquiry()">Send Enquiry</button>
-
+<button class="btn" onclick="sendEnquiry()">Send Enquiry ⚡</button>
 </section>
 
-<!-- CAREER -->
 <section id="career" class="section">
-
-<h2>Career Opportunities</h2>
-
+<h2>Career Opportunities 💼</h2>
 <input id="cname" placeholder="Your Name">
-<input id="cphone" placeholder="Mobile Number">
-
+<input id="cphone" placeholder="Mobile Number" type="tel">
 <select id="crole">
 <option>Part Time</option>
 <option>Full Time</option>
 <option>Freelancer</option>
 <option>Student Intern</option>
 </select>
-
-<button class="btn" onclick="careerApply()">
-Apply Now
-</button>
-
+<button class="btn" onclick="careerApply()">Apply Now 🚀</button>
 </section>
 
-<!-- MAP -->
-<section class="section">
-<h2>Visit Our Centre</h2>
-<iframe src="https://maps.google.com/maps?q=Ayapakkam%20Chennai&output=embed"></iframe>
+<section id="contact" class="section">
+<h2>Visit Our Centre 📍</h2>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.008!2d80.1!3d13.1!2m3!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sAyapakkam%20Chennai!5e0!3m2!1sen!2sin!4v0000000000" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
 <footer>
-© 2026 Hazel Projects | Chennai
+© 2026 Hazel Projects | Chennai 🧡
 </footer>
 
-<!-- LEAD POPUP -->
 <div id="lead" class="popup">
-Need Project Help?<br><br>
-<button class="btn"
-onclick="window.open('https://wa.me/919791871615?text=I need project details')">
-Chat Now
+<button class="close-popup" onclick="closePopup()">×</button>
+<b>Need Project Help?</b><br><br>
+<button class="btn" onclick="window.open('https://wa.me/919791871615?text=I need project details')">
+Chat Now 💬
 </button>
 </div>
 
-<a class="whatsapp"
-href="https://wa.me/919791871615?text=Hello Hazel Projects">
-💬
+<a class="whatsapp" href="https://wa.me/919791871615?text=Hello Hazel Projects">
+<i class="fa-brands fa-whatsapp"></i>
 </a>
 
 </body>
