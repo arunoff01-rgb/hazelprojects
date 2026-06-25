@@ -3,11 +3,71 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hazel Projects | Funky Project Centre Chennai</title>
-<meta name="description" content="Hazel Projects Chennai provides Arduino, ESP32, IoT, AI, Mechanical, ECE and Final Year Engineering Projects with a funky twist.">
+
+<!-- PRIMARY SEO -->
+<title>Hazel Projects | Best Project Centre Chennai | Ayappakkam, Avadi, Ambattur</title>
+<meta name="description" content="Hazel Projects - Top Project Centre in Chennai. Final year engineering projects, Arduino, ESP32, IoT, AI/ML in Ayappakkam, Avadi, Ambattur, Chennai. Call +91 97918 71615. Best project centre near me.">
+<meta name="keywords" content="project centre chennai, project centre near me, project centre in ayappakkam, project centre in avadi, project centre in ambattur, final year projects chennai, arduino projects chennai, iot projects chennai, engineering projects chennai, hazel projects">
+
+<!-- GEO SEO -->
+<meta name="geo.region" content="IN-TN">
+<meta name="geo.placename" content="Ayappakkam, Chennai">
+<meta name="geo.position" content="13.0827;80.2707">
+<meta name="ICBM" content="13.0827, 80.2707">
+
+<!-- OPEN GRAPH FOR WHATSAPP/FB -->
+<meta property="og:title" content="Hazel Projects | Project Centre Chennai - Ayappakkam, Avadi, Ambattur">
+<meta property="og:description" content="Best Final Year & Engineering Project Centre in Chennai. Arduino, IoT, AI/ML projects. Visit us in Ayappakkam. Call: 9791871615">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_IN">
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hazel Projects - Project Centre Chennai">
+<meta name="twitter:description" content="Top project centre near you in Ayappakkam, Avadi, Ambattur, Chennai">
 
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- SCHEMA MARKUP FOR GOOGLE "NEAR ME" RANKING -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Hazel Projects",
+  "image": "",
+  "description": "Best project centre in Chennai for Arduino, ESP32, IoT, AI/ML, Mechanical, ECE final year engineering projects",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ayappakkam",
+    "addressLocality": "Chennai",
+    "addressRegion": "Tamil Nadu",
+    "postalCode": "600077",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 13.0827,
+    "longitude": 80.2707
+  },
+  "telephone": "+919791871615",
+  "url": "",
+  "priceRange": "₹₹",
+  "openingHours": "Mo-Sa 09:00-18:00",
+  "areaServed": [
+    {"@type": "City", "name": "Chennai"},
+    {"@type": "Place", "name": "Ayappakkam"},
+    {"@type": "Place", "name": "Avadi"},
+    {"@type": "Place", "name": "Ambattur"},
+    {"@type": "Place", "name": "Anna Nagar"},
+    {"@type": "Place", "name": "Padi"},
+    {"@type": "Place", "name": "Thirumullaivoyal"}
+  ],
+  "sameAs": [
+    "https://wa.me/919791871615"
+  ]
+}
+</script>
 
 <style>
 :root{
@@ -50,10 +110,66 @@ body::before{
   0%{transform:scale(1) rotate(0deg)}
   100%{transform:scale(1.2) rotate(10deg)}
 }
+
+/* LARGE MOBILE NUMBER TOP BAR */
+.top-number-bar{
+  background:linear-gradient(135deg, var(--purple), #361f47);
+  padding:18px 20px;
+  text-align:center;
+  border-bottom:4px solid var(--yellow);
+  position:relative;
+  overflow:hidden;
+}
+.top-number-bar::before{
+  content:'📞';
+  position:absolute;
+  font-size:80px;
+  opacity:0.1;
+  left:5%;
+  top:50%;
+  transform:translateY(-50%);
+}
+.top-number-bar a{
+  color:white;
+  text-decoration:none;
+  font-size:clamp(22px, 4vw, 36px);
+  font-weight:900;
+  font-family:'Space Grotesk', sans-serif;
+  letter-spacing:1px;
+  display:inline-block;
+  text-shadow:3px 3px 0 var(--orange);
+  transition:.3s cubic-bezier(.68,-0.55,.265,1.55);
+  position:relative;
+}
+.top-number-bar a:hover{
+  transform:scale(1.08) rotate(-2deg);
+  text-shadow:5px 5px 0 var(--orange), 0 0 20px var(--yellow);
+}
+.top-number-bar a:active{
+  transform:scale(0.95);
+}
+.call-now-text{
+  font-size:13px;
+  color:var(--yellow);
+  font-weight:600;
+  display:block;
+  margin-bottom:5px;
+  letter-spacing:2px;
+}
+.top-number-bar.call-animate a{
+  animation:numberPulse 0.6s ease;
+}
+@keyframes numberPulse{
+  0%,100%{transform:scale(1)}
+  25%{transform:scale(1.2) rotate(-5deg); color:var(--yellow)}
+  50%{transform:scale(0.9) rotate(5deg)}
+  75%{transform:scale(1.1) rotate(-3deg); color:var(--yellow)}
+}
+
 nav{
   position:sticky;
   top:0;
-  background:rgba(255,90,0,0.8);
+  background:rgba(255,90,0,0.9);
   backdrop-filter:blur(12px);
   color:white;
   display:flex;
@@ -62,11 +178,6 @@ nav{
   padding:16px 5%;
   z-index:1000;
   border-bottom:2px solid rgba(255,255,255,0.2);
-  animation:slideDown 0.6s ease;
-}
-@keyframes slideDown{
-  from{transform:translateY(-100%)}
-  to{transform:translateY(0)}
 }
 nav h2{
   font-family:'Space Grotesk', sans-serif;
@@ -101,7 +212,7 @@ nav div a:hover::after{width:100%;}
 nav div a:hover{transform:translateY(-2px);}
 header{
   text-align:center;
-  padding:100px 20px 80px;
+  padding:80px 20px 60px;
   position:relative;
 }
 header h1{
@@ -128,6 +239,26 @@ header p{
   from{transform:translateY(30px); opacity:0}
   to{transform:translateY(0); opacity:1}
 }
+.address-top{
+  margin-top:25px;
+  display:inline-block;
+  background:var(--purple);
+  color:white;
+  padding:12px 24px;
+  border-radius:50px;
+  font-weight:600;
+  cursor:pointer;
+  border:3px solid var(--yellow);
+  box-shadow:5px 5px 0 var(--orange-dark);
+  transition:.3s cubic-bezier(.68,-0.55,.265,1.55);
+  animation:fadeUp 1s .5s both;
+}
+.address-top:hover{
+  transform:translateY(-4px) rotate(-2deg);
+  box-shadow:8px 8px 0 var(--orange-dark);
+  background:var(--orange);
+}
+.address-top i{margin-right:8px;}
 .floating-emoji{
   position:absolute;
   font-size:40px;
@@ -152,11 +283,6 @@ header p{
   position:relative;
   transform:rotate(-0.5deg);
   transition:.4s;
-  animation:sectionIn 0.6s ease-out;
-}
-@keyframes sectionIn{
-  from{transform:rotate(-0.5deg) translateY(50px); opacity:0}
-  to{transform:rotate(-0.5deg) translateY(0); opacity:1}
 }
 .section:hover{
   transform:rotate(0deg) translateY(-5px);
@@ -215,20 +341,6 @@ header p{
   position:relative;
   overflow:hidden;
 }
-.card::before{
-  content:'';
-  position:absolute;
-  top:-50%; left:-50%;
-  width:200%; height:200%;
-  background:radial-gradient(circle, var(--yellow) 0%, transparent 70%);
-  opacity:0;
-  transition:.5s;
-  transform:scale(0);
-}
-.card:hover::before{
-  opacity:0.2;
-  transform:scale(1);
-}
 .card:hover{
   transform:translateY(-12px) rotate(-2deg);
   box-shadow:12px 16px 0 var(--purple);
@@ -262,21 +374,6 @@ header p{
   transform:translateY(2px);
   box-shadow:2px 2px 0 var(--purple);
 }
-.btn::after{
-  content:'';
-  position:absolute;
-  top:50%; left:50%;
-  width:0; height:0;
-  border-radius:50%;
-  background:rgba(255,255,255,0.5);
-  transform:translate(-50%,-50%);
-  transition:width .6s, height .6s;
-}
-.btn:active::after{
-  width:300px;
-  height:300px;
-  opacity:0;
-}
 input,select{
   width:100%;
   padding:18px 20px;
@@ -295,6 +392,37 @@ input:focus,select:focus{
   border-color:var(--purple);
   box-shadow:6px 6px 0 var(--yellow);
   transform:translateY(-2px);
+}
+.address-box{
+  background:linear-gradient(135deg, var(--orange), var(--orange-light));
+  color:white;
+  padding:40px 30px;
+  border-radius:24px;
+  text-align:center;
+  border:4px solid var(--purple);
+  box-shadow:10px 10px 0 var(--yellow);
+  cursor:pointer;
+  transition:.3s cubic-bezier(.68,-0.55,.265,1.55);
+}
+.address-box:hover{
+  transform:translateY(-8px) rotate(-1deg);
+  box-shadow:14px 14px 0 var(--yellow);
+}
+.address-box i{
+  font-size:50px;
+  margin-bottom:15px;
+  display:block;
+  animation:bounce 2s ease-in-out infinite;
+}
+.address-box h3{
+  font-size:24px;
+  font-weight:900;
+  margin-bottom:10px;
+  font-family:'Space Grotesk', sans-serif;
+}
+.address-box p{
+  font-size:18px;
+  font-weight:500;
 }
 .whatsapp{
   position:fixed;
@@ -357,13 +485,15 @@ footer{
   font-weight:500;
   border-top:6px solid var(--orange);
 }
-iframe{
-  width:100%;
-  height:350px;
-  border:0;
-  border-radius:20px;
-  border:4px solid var(--orange);
-  box-shadow:8px 8px 0 var(--yellow);
+.footer-address{
+  margin-top:15px;
+  display:inline-block;
+  cursor:pointer;
+  transition:.3s;
+}
+.footer-address:hover{
+  color:var(--yellow);
+  transform:scale(1.05);
 }
 .ripple{
   position:absolute;
@@ -382,18 +512,31 @@ iframe{
   .section{margin:40px 20px; padding:35px 25px}
   header h1{font-size:52px}
   .quote{font-size:22px}
+  .address-top{font-size:14px; padding:10px 18px}
+  .top-number-bar a{font-size:26px}
 }
 </style>
 
 <script>
+const mapLocation = "https://maps.google.com/?q=Hazel+Projects+Ayappakkam+Chennai+600077";
+
 window.onload=()=>{
   setTimeout(()=>{
     document.getElementById("lead").style.display="block";
   },5000);
   
-  document.querySelectorAll('.btn, .card').forEach(el=>{
+  document.querySelectorAll('.btn, .card, .address-top, .address-box, .footer-address').forEach(el=>{
     el.addEventListener('click', createRipple);
   });
+}
+
+// TOP NUMBER CLICK ANIMATION
+function callNumber(e){
+  e.preventDefault();
+  const bar = document.querySelector('.top-number-bar');
+  bar.classList.add('call-animate');
+  setTimeout(()=>bar.classList.remove('call-animate'), 600);
+  window.location.href = 'tel:+919791871615';
 }
 
 function createRipple(e){
@@ -415,6 +558,10 @@ function createRipple(e){
 
 function closePopup(){
   document.getElementById("lead").style.display="none";
+}
+
+function openMap(){
+  window.open(mapLocation, '_blank');
 }
 
 function sendEnquiry(){
@@ -463,6 +610,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 <body>
 
+<!-- TOP LARGE MOBILE NUMBER -->
+<div class="top-number-bar">
+  <span class="call-now-text">CALL NOW FOR PROJECTS</span>
+  <a href="tel:+919791871615" onclick="callNumber(event)">
+    <i class="fa-solid fa-phone-volume"></i> +91 97918 71615
+  </a>
+</div>
+
 <nav>
 <h2>HAZEL PROJECTS</h2>
 <div>
@@ -479,6 +634,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 <span class="floating-emoji">💡</span>
 <h1>HAZEL PROJECTS</h1>
 <p>Turning Ideas Into Innovation 🔥</p>
+<div class="address-top" onclick="openMap()">
+<i class="fa-solid fa-location-dot"></i> Ayappakkam, Chennai 600077 - Click for Directions
+</div>
 </header>
 
 <section class="section">
@@ -529,11 +687,21 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 <section id="contact" class="section">
 <h2>Visit Our Centre 📍</h2>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.008!2d80.1!3d13.1!2m3!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sAyapakkam%20Chennai!5e0!3m2!1sen!2sin!4v0000000000" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div class="address-box" onclick="openMap()">
+<i class="fa-solid fa-map-location-dot"></i>
+<h3>HAZEL PROJECTS</h3>
+<p>Ayappakkam, Chennai, Tamil Nadu 600077</p>
+<p style="margin-top:10px; font-size:14px; opacity:0.9;">Click to open in Google Maps 🗺️</p>
+<p style="margin-top:15px; font-size:13px;">Serving: Ayappakkam | Avadi | Ambattur | Anna Nagar | All Over Chennai</p>
+</div>
 </section>
 
 <footer>
 © 2026 Hazel Projects | Chennai 🧡
+<br>
+<div class="footer-address" onclick="openMap()">
+<i class="fa-solid fa-location-dot"></i> Ayappakkam, Chennai 600077 - Get Directions
+</div>
 </footer>
 
 <div id="lead" class="popup">
