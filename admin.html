@@ -3,35 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Upload - Hazel Projects</title>
+<title>Admin Upload - Hazel Projects</title>
 </head>
-<body style="font-family:sans-serif;max-width:400px;margin:50px auto;padding:20px">
-<h2>Upload Photo</h2>
-<input type="password" id="pass" placeholder="Admin password" style="width:100%;padding:12px;margin-top:10px">
-<input type="file" id="file" accept="image/*" style="width:100%;padding:12px;margin-top:10px">
-<input type="text" id="title" placeholder="Title" style="width:100%;padding:12px;margin-top:10px">
-<button onclick="upload()" style="width:100%;padding:14px;margin-top:12px;background:#0EA5E9;color:#fff;border:none;border-radius:10px;font-weight:bold">UPLOAD ONLINE</button>
-<div id="msg" style="margin-top:20px;word-break:break-all"></div>
+<body style="font-family:sans-serif;max-width:420px;margin:50px auto;padding:20px">
+<h2>Hazel Projects - Upload</h2>
+<input type="password" id="pass" placeholder="Admin password" style="width:100%;padding:12px;margin-top:12px;border:1px solid #E2E8F0;border-radius:10px">
+<input type="file" id="file" accept="image/*" style="width:100%;padding:12px;margin-top:12px;border:1px solid #E2E8F0;border-radius:10px">
+<input type="text" id="title" placeholder="Title ex: Arduino Avadi" style="width:100%;padding:12px;margin-top:12px;border:1px solid #E2E8F0;border-radius:10px">
+<button onclick="upload()" id="btn" style="width:100%;padding:14px;margin-top:14px;background:#0EA5E9;color:#fff;border:none;border-radius:12px;font-weight:700">UPLOAD ONLINE</button>
+<div id="msg" style="margin-top:20px;word-break:break-all;font-size:13px"></div>
 
 <script>
 const CLOUD_NAME = "gqtpro4d";
 const PRESET = "hazel_upload";
-const PASSWORD = "hazel123"; // hidden, not shown anywhere
+const PASSWORD = "hazel123";
+const NPOINT = "https://api.npoint.io/faefe62490955068d3ed";
 
 async function upload(){
- if(document.getElementById('pass').value!= PASSWORD){alert("Wrong password");return}
+ if(document.getElementById('pass').value!==PASSWORD){alert("Wrong password");return}
  let file = document.getElementById('file').files[0];
  if(!file){alert("Select photo");return}
- document.getElementById('msg').innerHTML = "Uploading...";
- let fd = new FormData();
- fd.append("file", file);
- fd.append("upload_preset", PRESET);
- fd.append("tags", "hazel"); // FIXED - this makes it show on website
-
- let res = await fetch("https://api.cloudinary.com/v1_1/"+CLOUD_NAME+"/image/upload",{method:"POST",body:fd});
- let data = await res.json();
- let url = data.secure_url;
- document.getElementById('msg').innerHTML = "<b style='color:green'>Uploaded Success!</b><br><br><img src='"+url+"' style='width:100%;border-radius:12px'><br><br><small>Photo will appear on main website in 10 seconds. Refresh your main site.</small>";
+ let btn = document.getElementById('btn');
+ btn.innerHTML = "Uploading to Cloudinary..."; btn.disabled=true;
+ try{
+  let fd = new FormData();
+  fd.append("file", file);
+  fd.append("upload_preset", PRESET);
+  fd.append("tags", "hazel");
+  let res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,{method:"POST",body:fd});
+  let data = await res.json();
+  let url = data.secure_url;
+  if(!url) throw "Upload failed";
+  
+  btn.innerHTML = "Saving to website...";
+  // get existing list
+  let listRes = await fetch(NPOINT);
+  let list = await listRes.json();
+  if(!Array.isArray(list)) list = [];
+  list.unshift({url:url, title: document.getElementById('title').value || "Hazel Project", date: new Date().toISOString()});
+  
+  // save back to npoint
+  await fetch(NPOINT, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(list)});
+  
+  document.getElementById('msg').innerHTML = `<b style='color:green'>Uploaded and Live on Website! ✅</b><br><br><img src='${url}' style='width:100%;border-radius:12px'><br><br>Now refresh your main website - photo will appear for all visitors.`;
+  btn.innerHTML = "UPLOAD ONLINE"; btn.disabled=false;
+ }catch(e){
+  document.getElementById('msg').innerHTML = "Error: "+e; btn.innerHTML="UPLOAD ONLINE"; btn.disabled=false;
+ }
 }
 </script>
 </body>
