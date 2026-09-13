@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Upload Photo - Hazel Projects</title>
+</head>
+<body style="font-family:sans-serif;max-width:400px;margin:50px auto;padding:20px">
+<h2>Upload Photo</h2>
+<p>Password is hazel123</p>
+<input type="password" id="pass" placeholder="Enter password" style="width:100%;padding:12px;margin-top:10px">
+<input type="file" id="file" accept="image/*" style="width:100%;padding:12px;margin-top:10px">
+<input type="text" id="title" placeholder="Photo title ex: Arduino Project" style="width:100%;padding:12px;margin-top:10px">
+<button onclick="upload()" style="width:100%;padding:14px;margin-top:12px;background:#0EA5E9;color:#fff;border:none;border-radius:10px;font-weight:bold">UPLOAD ONLINE</button>
+<div id="msg" style="margin-top:20px"></div>
+
+<script>
+const CLOUD_NAME = "gqtpro4d";
+const PRESET = "hazel_upload";
+const PASSWORD = "hazel123";
+
+async function upload(){
+ if(document.getElementById('pass').value!= PASSWORD){alert("Wrong password");return}
+ let file = document.getElementById('file').files[0];
+ if(!file){alert("Select a photo first");return}
+ document.getElementById('msg').innerHTML = "Uploading... please wait";
+ let data = new FormData();
+ data.append("file", file);
+ data.append("upload_preset", PRESET);
+ let res = await fetch("https://api.cloudinary.com/v1_1/"+CLOUD_NAME+"/image/upload",{method:"POST",body:data});
+ let result = await res.json();
+ let url = result.secure_url;
+ document.getElementById('msg').innerHTML = "<b style='color:green'>Uploaded Success!</b><br><br><img src='"+url+"' style='width:100%;border-radius:12px'><br><br>URL: <input value='"+url+"' style='width:100%;padding:8px' readonly onclick='this.select()'>";
+}
+</script>
+</body>
+</html>
